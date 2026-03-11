@@ -1,0 +1,3321 @@
+{
+  "summary": {
+    "need_count": 65,
+    "tree_node_counts": {
+      "V": 1,
+      "W": 2,
+      "N": 4,
+      "H": 12
+    },
+    "scope_level_counts": [
+      {
+        "code": "H",
+        "name": "Household",
+        "order": 0,
+        "count": 12
+      },
+      {
+        "code": "N",
+        "name": "Neighbor Group",
+        "order": 1,
+        "count": 4
+      },
+      {
+        "code": "W",
+        "name": "Ward",
+        "order": 2,
+        "count": 2
+      },
+      {
+        "code": "V",
+        "name": "Village",
+        "order": 3,
+        "count": 1
+      }
+    ],
+    "scope": "90% self-sufficient village",
+    "completeness": "all 65 needs covered"
+  },
+  "top_interventions": [
+    {
+      "need": "food.processing.mill",
+      "target_scope": "H",
+      "households": 12,
+      "per_household_saving": 3,
+      "total_hop_savings": 36,
+      "investment": 4,
+      "maintenance": 2,
+      "difficulty": 2,
+      "time_horizon": "medium_term",
+      "savings_per_cost": 9.0,
+      "savings_per_effort": 4.5,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+          "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+          "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+        }
+      ],
+      "feasibility_notes": "Hand mills are feasible quickly; powered mills require more capital and energy.",
+      "barriers": [
+        {
+          "type": "cost",
+          "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "infrastructure",
+          "description": "Electric mill needs electricity supply",
+          "holds_at": "W",
+          "removable": true
+        }
+      ]
+    },
+    {
+      "need": "food.agri.tools",
+      "target_scope": "H",
+      "households": 4,
+      "per_household_saving": 1,
+      "total_hop_savings": 4,
+      "investment": 2,
+      "maintenance": 1,
+      "difficulty": 1,
+      "time_horizon": "immediate",
+      "savings_per_cost": 2.0,
+      "savings_per_effort": 1.0,
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Basic agricultural hand tools are typically cheap and individually ownable relative to larger productive assets."
+        }
+      ],
+      "feasibility_notes": "Low-cost household ownership is realistic for basic tools.",
+      "barriers": []
+    },
+    {
+      "need": "water.drinking.spring",
+      "target_scope": "H",
+      "households": 3,
+      "per_household_saving": 2,
+      "total_hop_savings": 6,
+      "investment": 3,
+      "maintenance": 1,
+      "difficulty": 3,
+      "time_horizon": "near_term",
+      "savings_per_cost": 2.0,
+      "savings_per_effort": 0.8571428571428571,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Rural Living in Nepal: Housing, Water & Waste in Paanchkhal",
+          "url": "https://nepjol.info/index.php/nprcjmr/article/view/78324",
+          "notes": "Supports the importance and diversity of rural water sources and domestic water arrangements."
+        }
+      ],
+      "feasibility_notes": "Household wells and protected springs are feasible in some settlements but terrain varies.",
+      "barriers": [
+        {
+          "type": "geography",
+          "description": "Not every household has a spring/well on their land; sharing may be necessary",
+          "holds_at": "N",
+          "removable": true
+        }
+      ]
+    },
+    {
+      "need": "education.school",
+      "target_scope": "W",
+      "households": 10,
+      "per_household_saving": 1,
+      "total_hop_savings": 10,
+      "investment": 4,
+      "maintenance": 4,
+      "difficulty": 4,
+      "time_horizon": "long_term",
+      "savings_per_cost": 2.5,
+      "savings_per_effort": 0.8333333333333334,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Access to infrastructure and human well-being: evidence from rural Nepal",
+          "url": "https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf",
+          "notes": "Supports the importance of local service access and the education burden in remote areas; ward-level placement remains a model judgment tied to population."
+        }
+      ],
+      "feasibility_notes": "Ward-level schooling is feasible only where enrollment and staffing can be sustained.",
+      "barriers": [
+        {
+          "type": "population",
+          "description": "Needs enough children for classes; teacher must be paid",
+          "holds_at": "W",
+          "removable": false
+        },
+        {
+          "type": "expertise",
+          "description": "Trained teachers required",
+          "holds_at": "W",
+          "removable": true
+        }
+      ]
+    },
+    {
+      "need": "communication.internet",
+      "target_scope": "H",
+      "households": 1,
+      "per_household_saving": 3,
+      "total_hop_savings": 3,
+      "investment": 3,
+      "maintenance": 4,
+      "difficulty": 2,
+      "time_horizon": "near_term",
+      "savings_per_cost": 1.0,
+      "savings_per_effort": 0.3333333333333333,
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Household internet feasibility depends heavily on signal availability, device ownership, and recurring data affordability."
+        }
+      ],
+      "feasibility_notes": "Household access is feasible where coverage exists, but recurring cost remains high.",
+      "barriers": [
+        {
+          "type": "infrastructure",
+          "description": "Needs tower/fiber and devices; H-level possible with mobile data",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Device and data plan cost",
+          "holds_at": "H",
+          "removable": true
+        }
+      ]
+    },
+    {
+      "need": "health.healthpost",
+      "target_scope": "W",
+      "households": 4,
+      "per_household_saving": 1,
+      "total_hop_savings": 4,
+      "investment": 4,
+      "maintenance": 5,
+      "difficulty": 4,
+      "time_horizon": "medium_term",
+      "savings_per_cost": 1.0,
+      "savings_per_effort": 0.3076923076923077,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Assessing the health impacts of a Comprehensive Rural Health Project in Nepal",
+          "url": "https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0004458",
+          "notes": "Supports the importance of localized rural health service provision and community health interventions."
+        }
+      ],
+      "feasibility_notes": "Ward-level health services are feasible with recurrent staffing and drug supply.",
+      "barriers": [
+        {
+          "type": "expertise",
+          "description": "Needs trained health worker, medical supplies",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Medicine stock, equipment require ongoing funding",
+          "holds_at": "W",
+          "removable": true
+        }
+      ]
+    },
+    {
+      "need": "water.irrigation.tiller",
+      "target_scope": "H",
+      "households": 1,
+      "per_household_saving": 1,
+      "total_hop_savings": 1,
+      "investment": 5,
+      "maintenance": 4,
+      "difficulty": 3,
+      "time_horizon": "medium_term",
+      "savings_per_cost": 0.2,
+      "savings_per_effort": 0.08333333333333333,
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Household ownership is physically possible but may be economically inferior to shared access in most villages."
+        }
+      ],
+      "feasibility_notes": "Household ownership is possible but expensive and maintenance-heavy; shared use is often more efficient.",
+      "barriers": []
+    }
+  ],
+  "budget_scenarios": [
+    {
+      "budget_band": 5,
+      "total_hop_savings": 36,
+      "total_investment_cost": 4,
+      "selected": [
+        {
+          "need": "food.processing.mill",
+          "target_scope": "H",
+          "households": 12,
+          "per_household_saving": 3,
+          "total_hop_savings": 36,
+          "investment": 4,
+          "maintenance": 2,
+          "difficulty": 2,
+          "time_horizon": "medium_term",
+          "savings_per_cost": 9.0,
+          "savings_per_effort": 4.5,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+              "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+              "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+            }
+          ],
+          "feasibility_notes": "Hand mills are feasible quickly; powered mills require more capital and energy.",
+          "barriers": [
+            {
+              "type": "cost",
+              "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+              "holds_at": "W",
+              "removable": true
+            },
+            {
+              "type": "infrastructure",
+              "description": "Electric mill needs electricity supply",
+              "holds_at": "W",
+              "removable": true
+            }
+          ]
+        }
+      ],
+      "id": "bootstrap",
+      "name": "Bootstrap Quick Wins",
+      "objective": "maximize_hop_savings",
+      "notes": "Very limited resources. Prefer immediate, low-cost, high-certainty gains."
+    },
+    {
+      "budget_band": 10,
+      "total_hop_savings": 50,
+      "total_investment_cost": 10,
+      "selected": [
+        {
+          "need": "food.processing.mill",
+          "target_scope": "H",
+          "households": 12,
+          "per_household_saving": 3,
+          "total_hop_savings": 36,
+          "investment": 4,
+          "maintenance": 2,
+          "difficulty": 2,
+          "time_horizon": "medium_term",
+          "savings_per_cost": 9.0,
+          "savings_per_effort": 4.5,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+              "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+              "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+            }
+          ],
+          "feasibility_notes": "Hand mills are feasible quickly; powered mills require more capital and energy.",
+          "barriers": [
+            {
+              "type": "cost",
+              "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+              "holds_at": "W",
+              "removable": true
+            },
+            {
+              "type": "infrastructure",
+              "description": "Electric mill needs electricity supply",
+              "holds_at": "W",
+              "removable": true
+            }
+          ]
+        },
+        {
+          "need": "food.agri.tools",
+          "target_scope": "H",
+          "households": 4,
+          "per_household_saving": 1,
+          "total_hop_savings": 4,
+          "investment": 2,
+          "maintenance": 1,
+          "difficulty": 1,
+          "time_horizon": "immediate",
+          "savings_per_cost": 2.0,
+          "savings_per_effort": 1.0,
+          "confidence": "high",
+          "evidence": [
+            {
+              "kind": "model_assumption",
+              "notes": "Basic agricultural hand tools are typically cheap and individually ownable relative to larger productive assets."
+            }
+          ],
+          "feasibility_notes": "Low-cost household ownership is realistic for basic tools.",
+          "barriers": []
+        },
+        {
+          "need": "education.school",
+          "target_scope": "W",
+          "households": 10,
+          "per_household_saving": 1,
+          "total_hop_savings": 10,
+          "investment": 4,
+          "maintenance": 4,
+          "difficulty": 4,
+          "time_horizon": "long_term",
+          "savings_per_cost": 2.5,
+          "savings_per_effort": 0.8333333333333334,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Access to infrastructure and human well-being: evidence from rural Nepal",
+              "url": "https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf",
+              "notes": "Supports the importance of local service access and the education burden in remote areas; ward-level placement remains a model judgment tied to population."
+            }
+          ],
+          "feasibility_notes": "Ward-level schooling is feasible only where enrollment and staffing can be sustained.",
+          "barriers": [
+            {
+              "type": "population",
+              "description": "Needs enough children for classes; teacher must be paid",
+              "holds_at": "W",
+              "removable": false
+            },
+            {
+              "type": "expertise",
+              "description": "Trained teachers required",
+              "holds_at": "W",
+              "removable": true
+            }
+          ]
+        }
+      ],
+      "id": "practical",
+      "name": "Practical Upgrade Path",
+      "objective": "maximize_hop_savings",
+      "notes": "Moderate village investment. Combine one major intervention with smaller fast wins."
+    },
+    {
+      "budget_band": 16,
+      "total_hop_savings": 59,
+      "total_investment_cost": 16,
+      "selected": [
+        {
+          "need": "food.processing.mill",
+          "target_scope": "H",
+          "households": 12,
+          "per_household_saving": 3,
+          "total_hop_savings": 36,
+          "investment": 4,
+          "maintenance": 2,
+          "difficulty": 2,
+          "time_horizon": "medium_term",
+          "savings_per_cost": 9.0,
+          "savings_per_effort": 4.5,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+              "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+              "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+            }
+          ],
+          "feasibility_notes": "Hand mills are feasible quickly; powered mills require more capital and energy.",
+          "barriers": [
+            {
+              "type": "cost",
+              "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+              "holds_at": "W",
+              "removable": true
+            },
+            {
+              "type": "infrastructure",
+              "description": "Electric mill needs electricity supply",
+              "holds_at": "W",
+              "removable": true
+            }
+          ]
+        },
+        {
+          "need": "food.agri.tools",
+          "target_scope": "H",
+          "households": 4,
+          "per_household_saving": 1,
+          "total_hop_savings": 4,
+          "investment": 2,
+          "maintenance": 1,
+          "difficulty": 1,
+          "time_horizon": "immediate",
+          "savings_per_cost": 2.0,
+          "savings_per_effort": 1.0,
+          "confidence": "high",
+          "evidence": [
+            {
+              "kind": "model_assumption",
+              "notes": "Basic agricultural hand tools are typically cheap and individually ownable relative to larger productive assets."
+            }
+          ],
+          "feasibility_notes": "Low-cost household ownership is realistic for basic tools.",
+          "barriers": []
+        },
+        {
+          "need": "water.drinking.spring",
+          "target_scope": "H",
+          "households": 3,
+          "per_household_saving": 2,
+          "total_hop_savings": 6,
+          "investment": 3,
+          "maintenance": 1,
+          "difficulty": 3,
+          "time_horizon": "near_term",
+          "savings_per_cost": 2.0,
+          "savings_per_effort": 0.8571428571428571,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Rural Living in Nepal: Housing, Water & Waste in Paanchkhal",
+              "url": "https://nepjol.info/index.php/nprcjmr/article/view/78324",
+              "notes": "Supports the importance and diversity of rural water sources and domestic water arrangements."
+            }
+          ],
+          "feasibility_notes": "Household wells and protected springs are feasible in some settlements but terrain varies.",
+          "barriers": [
+            {
+              "type": "geography",
+              "description": "Not every household has a spring/well on their land; sharing may be necessary",
+              "holds_at": "N",
+              "removable": true
+            }
+          ]
+        },
+        {
+          "need": "education.school",
+          "target_scope": "W",
+          "households": 10,
+          "per_household_saving": 1,
+          "total_hop_savings": 10,
+          "investment": 4,
+          "maintenance": 4,
+          "difficulty": 4,
+          "time_horizon": "long_term",
+          "savings_per_cost": 2.5,
+          "savings_per_effort": 0.8333333333333334,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "kind": "citation",
+              "citation": "Access to infrastructure and human well-being: evidence from rural Nepal",
+              "url": "https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf",
+              "notes": "Supports the importance of local service access and the education burden in remote areas; ward-level placement remains a model judgment tied to population."
+            }
+          ],
+          "feasibility_notes": "Ward-level schooling is feasible only where enrollment and staffing can be sustained.",
+          "barriers": [
+            {
+              "type": "population",
+              "description": "Needs enough children for classes; teacher must be paid",
+              "holds_at": "W",
+              "removable": false
+            },
+            {
+              "type": "expertise",
+              "description": "Trained teachers required",
+              "holds_at": "W",
+              "removable": true
+            }
+          ]
+        },
+        {
+          "need": "communication.internet",
+          "target_scope": "H",
+          "households": 1,
+          "per_household_saving": 3,
+          "total_hop_savings": 3,
+          "investment": 3,
+          "maintenance": 4,
+          "difficulty": 2,
+          "time_horizon": "near_term",
+          "savings_per_cost": 1.0,
+          "savings_per_effort": 0.3333333333333333,
+          "confidence": "provisional",
+          "evidence": [
+            {
+              "kind": "estimate",
+              "notes": "Household internet feasibility depends heavily on signal availability, device ownership, and recurring data affordability."
+            }
+          ],
+          "feasibility_notes": "Household access is feasible where coverage exists, but recurring cost remains high.",
+          "barriers": [
+            {
+              "type": "infrastructure",
+              "description": "Needs tower/fiber and devices; H-level possible with mobile data",
+              "holds_at": "W",
+              "removable": true
+            },
+            {
+              "type": "cost",
+              "description": "Device and data plan cost",
+              "holds_at": "H",
+              "removable": true
+            }
+          ]
+        }
+      ],
+      "id": "transformation",
+      "name": "High Self-Sufficiency Push",
+      "objective": "maximize_hop_savings",
+      "notes": "Aggressive route-shortening program for long-term self-sufficiency."
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "village",
+        "label": "Village",
+        "type": "V",
+        "parent_id": null,
+        "child_ids": [
+          "ward_1",
+          "ward_2"
+        ],
+        "status": "active",
+        "satisfies": [
+          "food.market.haat",
+          "food.market.shop",
+          "food.storage.cold",
+          "food.processing.mill",
+          "food.nutrition.schoolmeal",
+          "education.school",
+          "education.ecd",
+          "education.vocational",
+          "health.healthpost",
+          "energy.electricity.grid",
+          "energy.electricity.streetlight",
+          "energy.mechanical.mill",
+          "energy.mechanical.coldstore",
+          "governance.ward_office",
+          "governance.documentation",
+          "commerce.bank",
+          "commerce.cooperative",
+          "infrastructure.road",
+          "water.drinking.committee",
+          "water.emergency.handpump",
+          "environment.forest",
+          "conservation.grain_bank",
+          "security.disaster",
+          "social.temple",
+          "industry.mill",
+          "transport.road",
+          "communication.internet"
+        ],
+        "provides": [
+          "food.market.haat",
+          "food.processing.mill",
+          "education.school",
+          "health.healthpost",
+          "governance.ward_office",
+          "commerce.bank",
+          "infrastructure.road",
+          "environment.forest"
+        ],
+        "requires": []
+      },
+      {
+        "id": "ward_1",
+        "label": "Ward 1",
+        "type": "W",
+        "parent_id": "village",
+        "child_ids": [
+          "n1_1",
+          "n1_2"
+        ],
+        "status": "active",
+        "satisfies": [
+          "transport.trail",
+          "water.drinking.piped",
+          "water.drinking.spring",
+          "food.market.shop",
+          "governance.dispute",
+          "sanitation.waste"
+        ],
+        "provides": [
+          "water.drinking.piped",
+          "transport.trail"
+        ],
+        "requires": [
+          {
+            "node": "village",
+            "need": "water.drinking.committee"
+          },
+          {
+            "node": "village",
+            "need": "infrastructure.road"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      },
+      {
+        "id": "n1_1",
+        "label": "Neighbor Group 1.1",
+        "type": "N",
+        "parent_id": "ward_1",
+        "child_ids": [
+          "h1_1_1",
+          "h1_1_2",
+          "h1_1_3"
+        ],
+        "status": "active",
+        "satisfies": [
+          "commerce.parma",
+          "governance.dispute",
+          "social.festival",
+          "food.agri.tools"
+        ],
+        "provides": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "requires": []
+      },
+      {
+        "id": "h1_1_1",
+        "label": "Household 1.1.1",
+        "type": "H",
+        "parent_id": "n1_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.vegetables.kitchen",
+          "food.livestock",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "transport.packanimal",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n1_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "health.healthpost"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          }
+        ]
+      },
+      {
+        "id": "h1_1_2",
+        "label": "Household 1.1.2",
+        "type": "H",
+        "parent_id": "n1_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.vegetables.kitchen",
+          "food.livestock",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.biogas",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "communication.radio",
+          "communication.mobile",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n1_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          }
+        ]
+      },
+      {
+        "id": "h1_1_3",
+        "label": "Household 1.1.3",
+        "type": "H",
+        "parent_id": "n1_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "transport.packanimal",
+          "communication.radio",
+          "legal.rights",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n1_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "n1_1",
+            "need": "food.agri.tools"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "health.healthpost"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          }
+        ]
+      },
+      {
+        "id": "n1_2",
+        "label": "Neighbor Group 1.2",
+        "type": "N",
+        "parent_id": "ward_1",
+        "child_ids": [
+          "h1_2_1",
+          "h1_2_2",
+          "h1_2_3"
+        ],
+        "status": "active",
+        "satisfies": [
+          "water.irrigation.kulo",
+          "water.irrigation.tiller",
+          "commerce.parma",
+          "governance.dispute",
+          "social.festival"
+        ],
+        "provides": [
+          "water.irrigation.kulo",
+          "water.irrigation.tiller",
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "requires": [
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          }
+        ]
+      },
+      {
+        "id": "h1_2_1",
+        "label": "Household 1.2.1",
+        "type": "H",
+        "parent_id": "n1_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.vegetables.kitchen",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.irrigation.pump",
+          "water.irrigation.pipes",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "transport.packanimal",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "n1_2",
+            "need": "water.irrigation.kulo"
+          },
+          {
+            "node": "n1_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          },
+          {
+            "node": "n1_2",
+            "need": "water.irrigation.tiller"
+          }
+        ]
+      },
+      {
+        "id": "h1_2_2",
+        "label": "Household 1.2.2",
+        "type": "H",
+        "parent_id": "n1_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.livestock",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.biogas",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "n1_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          }
+        ]
+      },
+      {
+        "id": "h1_2_3",
+        "label": "Household 1.2.3",
+        "type": "H",
+        "parent_id": "n1_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "transport.packanimal",
+          "communication.radio",
+          "legal.rights",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "n1_2",
+            "need": "water.irrigation.kulo"
+          },
+          {
+            "node": "n1_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "n1_2",
+            "need": "food.agri.tools"
+          },
+          {
+            "node": "ward_1",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      },
+      {
+        "id": "ward_2",
+        "label": "Ward 2",
+        "type": "W",
+        "parent_id": "village",
+        "child_ids": [
+          "n2_1",
+          "n2_2"
+        ],
+        "status": "active",
+        "satisfies": [
+          "transport.trail",
+          "water.drinking.spring",
+          "water.drinking.piped",
+          "food.market.shop",
+          "governance.dispute",
+          "sanitation.waste"
+        ],
+        "provides": [
+          "water.drinking.spring",
+          "water.drinking.piped",
+          "transport.trail"
+        ],
+        "requires": [
+          {
+            "node": "village",
+            "need": "water.drinking.committee"
+          },
+          {
+            "node": "village",
+            "need": "infrastructure.road"
+          }
+        ]
+      },
+      {
+        "id": "n2_1",
+        "label": "Neighbor Group 2.1",
+        "type": "N",
+        "parent_id": "ward_2",
+        "child_ids": [
+          "h2_1_1",
+          "h2_1_2",
+          "h2_1_3"
+        ],
+        "status": "active",
+        "satisfies": [
+          "commerce.parma",
+          "governance.dispute",
+          "social.festival",
+          "food.agri.tools"
+        ],
+        "provides": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "requires": []
+      },
+      {
+        "id": "h2_1_1",
+        "label": "Household 2.1.1",
+        "type": "H",
+        "parent_id": "n2_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.vegetables.kitchen",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.rainwater",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "transport.packanimal",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.spring"
+          },
+          {
+            "node": "n2_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "health.healthpost"
+          },
+          {
+            "node": "village",
+            "need": "governance.documentation"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      },
+      {
+        "id": "h2_1_2",
+        "label": "Household 2.1.2",
+        "type": "H",
+        "parent_id": "n2_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.livestock",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.biogas",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "communication.radio",
+          "communication.mobile",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.spring"
+          },
+          {
+            "node": "n2_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "health.healthpost"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          }
+        ]
+      },
+      {
+        "id": "h2_1_3",
+        "label": "Household 2.1.3",
+        "type": "H",
+        "parent_id": "n2_1",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "transport.packanimal",
+          "communication.radio",
+          "legal.rights",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n2_1",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "n2_1",
+            "need": "food.agri.tools"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      },
+      {
+        "id": "n2_2",
+        "label": "Neighbor Group 2.2",
+        "type": "N",
+        "parent_id": "ward_2",
+        "child_ids": [
+          "h2_2_1",
+          "h2_2_2",
+          "h2_2_3"
+        ],
+        "status": "active",
+        "satisfies": [
+          "commerce.parma",
+          "governance.dispute",
+          "social.festival",
+          "food.agri.tools"
+        ],
+        "provides": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "requires": []
+      },
+      {
+        "id": "h2_2_1",
+        "label": "Household 2.2.1",
+        "type": "H",
+        "parent_id": "n2_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.vegetables.kitchen",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.rainwater",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.spring"
+          },
+          {
+            "node": "n2_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      },
+      {
+        "id": "h2_2_2",
+        "label": "Household 2.2.2",
+        "type": "H",
+        "parent_id": "n2_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.livestock",
+          "food.agri.seeds",
+          "food.agri.fertilizer",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.biogas",
+          "energy.cooking.chulo",
+          "energy.electricity.solar",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "clothing.fabric",
+          "communication.radio",
+          "health.maternal",
+          "legal.rights",
+          "industry.craft",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n2_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "commerce.bank"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "communication.internet"
+          }
+        ]
+      },
+      {
+        "id": "h2_2_3",
+        "label": "Household 2.2.3",
+        "type": "H",
+        "parent_id": "n2_2",
+        "child_ids": [],
+        "status": "active",
+        "satisfies": [
+          "food.staples.own",
+          "food.agri.tools",
+          "food.storage.bharako",
+          "conservation.food_drying",
+          "energy.cooking.firewood",
+          "energy.cooking.chulo",
+          "shelter.construction",
+          "shelter.comfort",
+          "shelter.toilet",
+          "water.drinking.purification",
+          "water.drinking.storage",
+          "transport.packanimal",
+          "communication.radio",
+          "legal.rights",
+          "sanitation.waste"
+        ],
+        "provides": [],
+        "requires": [
+          {
+            "node": "ward_2",
+            "need": "water.drinking.piped"
+          },
+          {
+            "node": "n2_2",
+            "need": "commerce.parma"
+          },
+          {
+            "node": "n2_2",
+            "need": "food.agri.tools"
+          },
+          {
+            "node": "village",
+            "need": "food.market.haat"
+          },
+          {
+            "node": "village",
+            "need": "education.school"
+          },
+          {
+            "node": "village",
+            "need": "food.processing.mill"
+          },
+          {
+            "node": "village",
+            "need": "environment.forest"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "source": "h1_1_1",
+        "source_type": "H",
+        "target": "n1_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h1_1_2",
+        "source_type": "H",
+        "target": "n1_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h1_1_3",
+        "source_type": "H",
+        "target": "n1_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "weight": 2,
+        "route_length": 1
+      },
+      {
+        "source": "h1_2_1",
+        "source_type": "H",
+        "target": "n1_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma",
+          "water.irrigation.kulo",
+          "water.irrigation.tiller"
+        ],
+        "weight": 3,
+        "route_length": 1
+      },
+      {
+        "source": "h1_2_2",
+        "source_type": "H",
+        "target": "n1_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h1_2_3",
+        "source_type": "H",
+        "target": "n1_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma",
+          "food.agri.tools",
+          "water.irrigation.kulo"
+        ],
+        "weight": 3,
+        "route_length": 1
+      },
+      {
+        "source": "h2_1_1",
+        "source_type": "H",
+        "target": "n2_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h2_1_2",
+        "source_type": "H",
+        "target": "n2_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h2_1_3",
+        "source_type": "H",
+        "target": "n2_1",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "weight": 2,
+        "route_length": 1
+      },
+      {
+        "source": "h2_2_1",
+        "source_type": "H",
+        "target": "n2_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h2_2_2",
+        "source_type": "H",
+        "target": "n2_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "h2_2_3",
+        "source_type": "H",
+        "target": "n2_2",
+        "target_type": "N",
+        "needs": [
+          "commerce.parma",
+          "food.agri.tools"
+        ],
+        "weight": 2,
+        "route_length": 1
+      },
+      {
+        "source": "n1_2",
+        "source_type": "N",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 1
+      },
+      {
+        "source": "ward_1",
+        "source_type": "W",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "environment.forest",
+          "infrastructure.road",
+          "water.drinking.committee"
+        ],
+        "weight": 3,
+        "route_length": 1
+      },
+      {
+        "source": "ward_2",
+        "source_type": "W",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "infrastructure.road",
+          "water.drinking.committee"
+        ],
+        "weight": 2,
+        "route_length": 1
+      },
+      {
+        "source": "h1_1_1",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_1_2",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_1_3",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_2_1",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_2_2",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_2_3",
+        "source_type": "H",
+        "target": "ward_1",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_1_1",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.spring"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_1_2",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.spring"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_1_3",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_2_1",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.spring"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_2_2",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h2_2_3",
+        "source_type": "H",
+        "target": "ward_2",
+        "target_type": "W",
+        "needs": [
+          "water.drinking.piped"
+        ],
+        "weight": 1,
+        "route_length": 2
+      },
+      {
+        "source": "h1_1_1",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill",
+          "health.healthpost"
+        ],
+        "weight": 5,
+        "route_length": 3
+      },
+      {
+        "source": "h1_1_2",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 3,
+        "route_length": 3
+      },
+      {
+        "source": "h1_1_3",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "food.market.haat",
+          "food.processing.mill",
+          "health.healthpost"
+        ],
+        "weight": 4,
+        "route_length": 3
+      },
+      {
+        "source": "h1_2_1",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 4,
+        "route_length": 3
+      },
+      {
+        "source": "h1_2_2",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 3,
+        "route_length": 3
+      },
+      {
+        "source": "h1_2_3",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 4,
+        "route_length": 3
+      },
+      {
+        "source": "h2_1_1",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill",
+          "governance.documentation",
+          "health.healthpost"
+        ],
+        "weight": 5,
+        "route_length": 3
+      },
+      {
+        "source": "h2_1_2",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "food.market.haat",
+          "food.processing.mill",
+          "health.healthpost"
+        ],
+        "weight": 3,
+        "route_length": 3
+      },
+      {
+        "source": "h2_1_3",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 4,
+        "route_length": 3
+      },
+      {
+        "source": "h2_2_1",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 4,
+        "route_length": 3
+      },
+      {
+        "source": "h2_2_2",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "commerce.bank",
+          "communication.internet",
+          "education.school",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 5,
+        "route_length": 3
+      },
+      {
+        "source": "h2_2_3",
+        "source_type": "H",
+        "target": "village",
+        "target_type": "V",
+        "needs": [
+          "education.school",
+          "environment.forest",
+          "food.market.haat",
+          "food.processing.mill"
+        ],
+        "weight": 4,
+        "route_length": 3
+      }
+    ],
+    "need_options": [
+      "commerce.bank",
+      "commerce.parma",
+      "communication.internet",
+      "education.school",
+      "environment.forest",
+      "food.agri.tools",
+      "food.market.haat",
+      "food.processing.mill",
+      "governance.documentation",
+      "health.healthpost",
+      "infrastructure.road",
+      "water.drinking.committee",
+      "water.drinking.piped",
+      "water.drinking.spring",
+      "water.irrigation.kulo",
+      "water.irrigation.tiller"
+    ]
+  },
+  "needs": [
+    {
+      "id": "water.drinking.spring",
+      "name": "Spring/well/river as drinking source",
+      "category": "water",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Rural Living in Nepal: Housing, Water & Waste in Paanchkhal",
+          "url": "https://nepjol.info/index.php/nprcjmr/article/view/78324",
+          "notes": "Supports the importance and diversity of rural water sources and domestic water arrangements."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "geography",
+          "description": "Not every household has a spring/well on their land; sharing may be necessary",
+          "holds_at": "N",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 3,
+        "maintenance_cost_band": 1,
+        "implementation_difficulty_band": 3,
+        "time_horizon": "near_term",
+        "notes": "Household wells and protected springs are feasible in some settlements but terrain varies."
+      }
+    },
+    {
+      "id": "water.drinking.rainwater",
+      "name": "Rainwater harvesting",
+      "category": "water",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household rainwater capture is a common supplementary water practice where storage vessels and roofs are available, though reliability is seasonal."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.drinking.piped",
+      "name": "Piped supply, gravity-fed",
+      "category": "water",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Gravity-fed and piped systems are standard collective rural water arrangements where source protection, distribution, and maintenance exceed single-household capacity."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.drinking.purification",
+      "name": "Water purification (boiling, filters)",
+      "category": "water",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Boiling, filtering, and basic household treatment are widely recognized household-level practices for safer drinking water."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.drinking.storage",
+      "name": "Water storage (tanks, ghagri)",
+      "category": "water",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Rural water systems routinely require storage at household or shared level because collection and use are rarely perfectly continuous."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.drinking.committee",
+      "name": "Water user committee",
+      "category": "water",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Water user committees are inherently collective governance arrangements for shared infrastructure and cannot be meaningfully reduced to isolated households."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.irrigation.kulo",
+      "name": "Canals (kulo), diversion weirs",
+      "category": "water",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Traditional irrigation canals in Nepal are typically shared and maintained by multiple farming households rather than privately duplicated per family."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.irrigation.pump",
+      "name": "Lift/pump irrigation",
+      "category": "water",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Irrigation pumps can be owned individually or shared, but effective use still depends on water source access, pipes, fuel, or electricity."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.irrigation.pipes",
+      "name": "Pipes, hose for irrigation",
+      "category": "water",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Pipes and hoses are modular irrigation inputs that can exist at household or shared scale depending on field layout and cost sharing."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "water.irrigation.tiller",
+      "name": "Power tiller, tractor for land prep",
+      "category": "water",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Household ownership is physically possible but may be economically inferior to shared access in most villages."
+        }
+      ],
+      "barriers": [],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 5,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 3,
+        "time_horizon": "medium_term",
+        "notes": "Household ownership is possible but expensive and maintenance-heavy; shared use is often more efficient."
+      }
+    },
+    {
+      "id": "water.emergency.handpump",
+      "name": "Hand pumps, community water points",
+      "category": "water",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Emergency water points are usually planned as shared resilience infrastructure because their purpose is collective fallback access during failure or disaster."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.cooking.firewood",
+      "name": "Firewood for cooking",
+      "category": "energy",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household firewood use remains a common cooking fuel pattern in rural Nepal where biomass access persists."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.cooking.biogas",
+      "name": "Biogas",
+      "category": "energy",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Household biogas is feasible where livestock numbers, water, and maintenance capacity are sufficient, but adoption varies by settlement conditions."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.cooking.lpg",
+      "name": "LPG/gas cylinders",
+      "category": "energy",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "LPG access depends on road delivery, market supply, and recurring cash expenditure, making it a household consumption need with long external dependency."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.cooking.chulo",
+      "name": "Improved cookstove (chulo)",
+      "category": "energy",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Improved cookstoves are typically adopted and used at household level even when programs promoting them are organized collectively."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.electricity.solar",
+      "name": "Solar home system, micro-hydro",
+      "category": "energy",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "notes": "Rural electrification in Nepal commonly relies on household solar and community-scale hydro where grid extension is weak; exact deployment mix remains location-specific."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.electricity.grid",
+      "name": "Grid connection, micro-grid",
+      "category": "energy",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Grid connection and village-scale distribution are collective infrastructure systems that depend on external networks, regulation, and capital investment."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.electricity.streetlight",
+      "name": "Street lighting",
+      "category": "energy",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Street lighting serves shared public circulation space and is therefore a ward or village public good rather than a standalone household asset."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "energy.mechanical.mill",
+      "name": "Grinding mill, rice huller",
+      "category": "energy",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Mechanical milling can exist from household hand tools to village electric mills, but larger powered systems usually become shared productive infrastructure."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "cost",
+          "description": "Electric/diesel mill too expensive per household; hand mill is H-feasible",
+          "holds_at": "N",
+          "removable": true
+        }
+      ],
+      "feasibility": null
+    },
+    {
+      "id": "energy.mechanical.coldstore",
+      "name": "Cold storage, refrigeration",
+      "category": "energy",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Cold storage generally requires reliable energy, equipment maintenance, and enough throughput to justify collective deployment."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.agri.seeds",
+      "name": "Seeds, seed bank",
+      "category": "food",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Seed systems in rural agriculture commonly mix household seed saving with shared exchange or community banking for resilience and varietal access."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.agri.fertilizer",
+      "name": "Fertilizer (compost, manure, chemical)",
+      "category": "food",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Compost, manure, and small-scale fertilizer use are typically managed at household or nearby shared scale in village agriculture."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.agri.tools",
+      "name": "Agricultural tools (plough, sickle, kodalo)",
+      "category": "food",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Basic agricultural hand tools are typically cheap and individually ownable relative to larger productive assets."
+        }
+      ],
+      "barriers": [],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 2,
+        "maintenance_cost_band": 1,
+        "implementation_difficulty_band": 1,
+        "time_horizon": "immediate",
+        "notes": "Low-cost household ownership is realistic for basic tools."
+      }
+    },
+    {
+      "id": "food.staples.own",
+      "name": "Own staple production (rice, maize, millet)",
+      "category": "food",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household staple production is the core self-sufficiency case in subsistence-oriented rural farming systems."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.vegetables.kitchen",
+      "name": "Kitchen garden, seasonal produce",
+      "category": "food",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Kitchen gardens are a common household-level mechanism for dietary diversity and short-cycle produce supply."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.livestock",
+      "name": "Livestock (buffalo, goats, chickens)",
+      "category": "food",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Smallholder livestock is commonly owned and managed at household level, even when grazing or veterinary services are partly shared."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.storage.bharako",
+      "name": "Grain storage (bharako)",
+      "category": "food",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household grain storage is a standard component of food security in agrarian villages and directly supports self-reliance between harvests."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.storage.cold",
+      "name": "Cold storage for produce",
+      "category": "food",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Produce cold storage usually needs shared infrastructure, stable energy, and sufficient market volume, making ward or village placement more realistic than household duplication."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.processing.mill",
+      "name": "Rice mill, oil mill, flour mill",
+      "category": "food",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+          "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+          "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "cost",
+          "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "infrastructure",
+          "description": "Electric mill needs electricity supply",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 2,
+        "implementation_difficulty_band": 2,
+        "time_horizon": "medium_term",
+        "notes": "Hand mills are feasible quickly; powered mills require more capital and energy."
+      }
+    },
+    {
+      "id": "food.market.haat",
+      "name": "Haat bazaar, weekly market",
+      "category": "food",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Weekly markets require enough buyers, sellers, and circulation to function, which makes village-scale aggregation the practical minimum."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.market.shop",
+      "name": "Local shops",
+      "category": "food",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Local retail shops serve a shared customer base and therefore usually emerge at ward or village scale rather than household scale."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "food.nutrition.schoolmeal",
+      "name": "School meals, mid-day meal",
+      "category": "food",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "School meals are tied to collective schooling provision and program administration, not independent household delivery inside the model."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "shelter.construction",
+      "name": "House construction, materials",
+      "category": "shelter",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Houses are household assets, but construction often relies on reciprocal labor and shared local material knowledge."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "shelter.comfort",
+      "name": "Fireplace, warmth, lighting",
+      "category": "shelter",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Everyday thermal comfort and household lighting are primarily managed within the home, even when fuel or electricity has external dependencies."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "shelter.toilet",
+      "name": "Toilet (pit, pour-flush, septic)",
+      "category": "shelter",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Basic sanitation policy and practice both favor household toilet access, even where waste treatment beyond the plot may require shared systems."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "clothing.fabric",
+      "name": "Fabric, tailoring, repair",
+      "category": "clothing",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Clothing needs can be met through household production, local tailoring, or market purchase depending on skill, income, and access."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "transport.trail",
+      "name": "Foot trails, ghat, bridges",
+      "category": "transport",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "citation",
+          "notes": "In remote Nepal, foot trails and bridges are foundational transport infrastructure and remain essential even where roads expand unevenly."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "transport.packanimal",
+      "name": "Pack animals, porters",
+      "category": "transport",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Pack transport may be individually owned or shared among nearby households where roads are absent and terrain constrains vehicles."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "transport.road",
+      "name": "Motor road, vehicles",
+      "category": "transport",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Motor roads are public infrastructure requiring collective construction, maintenance, and external state coordination."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "communication.radio",
+      "name": "Radio, word of mouth",
+      "category": "communication",
+      "scope_options": [
+        "H",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Radio use can be individual household consumption even when the broader information ecosystem includes village announcements and community broadcasting."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "communication.mobile",
+      "name": "Mobile, telephony",
+      "category": "communication",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Mobile use is a household-level consumption need, but functionality depends on externally provided network coverage and device affordability."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "communication.internet",
+      "name": "Internet, digital services",
+      "category": "communication",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Household internet feasibility depends heavily on signal availability, device ownership, and recurring data affordability."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "infrastructure",
+          "description": "Needs tower/fiber and devices; H-level possible with mobile data",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Device and data plan cost",
+          "holds_at": "H",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 3,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 2,
+        "time_horizon": "near_term",
+        "notes": "Household access is feasible where coverage exists, but recurring cost remains high."
+      }
+    },
+    {
+      "id": "education.ecd",
+      "name": "ECD, daycare, bal bikas",
+      "category": "education",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Early childhood development centers depend on enough children, caregivers, and organized community or institutional support, which makes them collective services."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "education.school",
+      "name": "Primary, secondary school",
+      "category": "education",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Access to infrastructure and human well-being: evidence from rural Nepal",
+          "url": "https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf",
+          "notes": "Supports the importance of local service access and the education burden in remote areas; ward-level placement remains a model judgment tied to population."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "population",
+          "description": "Needs enough children for classes; teacher must be paid",
+          "holds_at": "W",
+          "removable": false
+        },
+        {
+          "type": "expertise",
+          "description": "Trained teachers required",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "W",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 4,
+        "time_horizon": "long_term",
+        "notes": "Ward-level schooling is feasible only where enrollment and staffing can be sustained."
+      }
+    },
+    {
+      "id": "education.vocational",
+      "name": "Vocational training",
+      "category": "education",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Vocational training usually depends on specialist instructors, equipment, and organized cohorts, which makes village or higher aggregation the realistic minimum in this model."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "health.healthpost",
+      "name": "Health post, FCHV",
+      "category": "health",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Assessing the health impacts of a Comprehensive Rural Health Project in Nepal",
+          "url": "https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0004458",
+          "notes": "Supports the importance of localized rural health service provision and community health interventions."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "expertise",
+          "description": "Needs trained health worker, medical supplies",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Medicine stock, equipment require ongoing funding",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "W",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 5,
+        "implementation_difficulty_band": 4,
+        "time_horizon": "medium_term",
+        "notes": "Ward-level health services are feasible with recurrent staffing and drug supply."
+      }
+    },
+    {
+      "id": "health.hospital",
+      "name": "Hospital, referral",
+      "category": "health",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Hospital and referral care require specialist infrastructure, staffing, and regulation beyond ordinary household or ward capacity."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "health.maternal",
+      "name": "Maternal, child health",
+      "category": "health",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Maternal and child health spans household care and formal service access, making multi-scope placement appropriate in the model."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "governance.ward_office",
+      "name": "Ward office, municipal office",
+      "category": "governance",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Formal ward and municipal administration is inherently collective and cannot be reduced to household or neighbor scope."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "governance.documentation",
+      "name": "Citizenship, land registration",
+      "category": "governance",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Civil documentation and land registration are formal state-recognized processes that inherently depend on collective administrative institutions."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "governance.dispute",
+      "name": "Dispute resolution, mediation",
+      "category": "governance",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Village disputes are often mediated first through nearby social structures before escalating to wider formal institutions, making multi-scope placement realistic."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "commerce.bank",
+      "name": "Bank, mobile banking",
+      "category": "commerce",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Banking infrastructure depends on regulated financial systems, external capital, and institutional interfaces beyond neighborhood or household scope."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "commerce.cooperative",
+      "name": "Cooperatives, savings groups",
+      "category": "commerce",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Savings groups and cooperatives depend on group trust, pooled capital, and collective governance rather than isolated household operation."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "commerce.parma",
+      "name": "Labor exchange (parma)",
+      "category": "commerce",
+      "scope_options": [
+        "N"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Parma is inherently a neighbor-scale reciprocal labor arrangement and cannot exist as a one-household activity."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "environment.forest",
+      "name": "Community forest, grazing land",
+      "category": "environment",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Community forest governance is inherently collective and not realistically reducible to isolated household ownership."
+        }
+      ],
+      "barriers": [
+        {
+          "type": "geography",
+          "description": "Forest is a shared natural resource; cannot be divided per-household",
+          "holds_at": "W",
+          "removable": false
+        },
+        {
+          "type": "regulation",
+          "description": "Community forest regulations require collective management",
+          "holds_at": "W",
+          "removable": false
+        }
+      ],
+      "feasibility": null
+    },
+    {
+      "id": "conservation.grain_bank",
+      "name": "Grain bank, seed bank",
+      "category": "conservation",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Grain and seed banks are collective resilience institutions that depend on shared governance, contribution rules, and managed reserves."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "conservation.food_drying",
+      "name": "Drying, pickling, fermentation",
+      "category": "conservation",
+      "scope_options": [
+        "H"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household preservation by drying, pickling, and fermentation is a common short-cycle technique for off-season food security."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "sanitation.waste",
+      "name": "Waste disposal, drainage",
+      "category": "sanitation",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Rural waste handling typically mixes household composting and drainage with shared cleanup or disposal infrastructure when density rises."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "social.temple",
+      "name": "Temple, gumba, community hall",
+      "category": "social",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Shared religious and community spaces serve collective ritual and gathering functions rather than isolated household use."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "social.festival",
+      "name": "Festivals, jatras",
+      "category": "social",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Festivals are collective cultural events whose meaning and viability depend on participation beyond the household."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "industry.craft",
+      "name": "Weaving, pottery, handicraft",
+      "category": "industry",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Cottage craft production often happens inside the household while still benefiting from neighbor-scale sharing of tools, skill, or exchange."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "industry.mill",
+      "name": "Rice mill, sawmill",
+      "category": "industry",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Processing mills usually need enough throughput, power, and maintenance to justify shared deployment rather than strict household ownership."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "infrastructure.road",
+      "name": "Roads, bridges, street lighting",
+      "category": "infrastructure",
+      "scope_options": [
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Roads, bridges, and public lighting are classic shared infrastructure systems requiring collective planning and maintenance."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "security.disaster",
+      "name": "Disaster response, early warning",
+      "category": "security",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Early warning and organized disaster response require shared communication and collective coordination beyond single households."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    },
+    {
+      "id": "legal.rights",
+      "name": "Marriage, inheritance, land rights",
+      "category": "legal",
+      "scope_options": [
+        "H",
+        "V"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Family rights practices may be experienced at household level, but legal recognition and enforceability depend on wider formal institutions."
+        }
+      ],
+      "barriers": [],
+      "feasibility": null
+    }
+  ]
+}

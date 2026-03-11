@@ -1,0 +1,19 @@
+Village
+Ward 1
+Neighbor Group 1.1
+Household 1.1.1
+Household 1.1.2
+Household 1.1.3
+Neighbor Group 1.2
+Household 1.2.1
+Household 1.2.2
+Household 1.2.3
+Ward 2
+Neighbor Group 2.1
+Household 2.1.1
+Household 2.1.2
+Household 2.1.3
+Neighbor Group 2.2
+Household 2.2.1
+Household 2.2.2
+Household 2.2.3

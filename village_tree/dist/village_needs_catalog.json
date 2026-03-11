@@ -1,0 +1,1466 @@
+{
+  "version": {
+    "schema": "1.0",
+    "taxonomy": "1.0"
+  },
+  "taxonomy": {
+    "scope_levels": [
+      {
+        "code": "H",
+        "name": "Household",
+        "order": 0,
+        "min_families": 1,
+        "max_families": 1
+      },
+      {
+        "code": "N",
+        "name": "Neighbor Group",
+        "order": 1,
+        "min_families": 2,
+        "max_families": 5
+      },
+      {
+        "code": "W",
+        "name": "Ward",
+        "order": 2,
+        "min_families": 10,
+        "max_families": 50
+      },
+      {
+        "code": "V",
+        "name": "Village",
+        "order": 3,
+        "min_families": 100,
+        "max_families": null
+      }
+    ]
+  },
+  "needs": [
+    {
+      "id": "water.drinking.spring",
+      "name": "Spring/well/river as drinking source",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "S",
+      "notes": "H=own well; N=shared well; W=ward tap; V=village piped",
+      "barriers": [
+        {
+          "type": "geography",
+          "description": "Not every household has a spring/well on their land; sharing may be necessary",
+          "holds_at": "N",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 3,
+        "maintenance_cost_band": 1,
+        "implementation_difficulty_band": 3,
+        "time_horizon": "near_term",
+        "notes": "Household wells and protected springs are feasible in some settlements but terrain varies."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Rural Living in Nepal: Housing, Water & Waste in Paanchkhal",
+          "url": "https://nepjol.info/index.php/nprcjmr/article/view/78324",
+          "notes": "Supports the importance and diversity of rural water sources and domestic water arrangements."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.drinking.rainwater",
+      "name": "Rainwater harvesting",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household rainwater capture is a common supplementary water practice where storage vessels and roofs are available, though reliability is seasonal."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.drinking.piped",
+      "name": "Piped supply, gravity-fed",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "depends_on": [
+        "water.drinking.spring"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Gravity-fed and piped systems are standard collective rural water arrangements where source protection, distribution, and maintenance exceed single-household capacity."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.drinking.purification",
+      "name": "Water purification (boiling, filters)",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Boiling, filtering, and basic household treatment are widely recognized household-level practices for safer drinking water."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.drinking.storage",
+      "name": "Water storage (tanks, ghagri)",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Rural water systems routinely require storage at household or shared level because collection and use are rarely perfectly continuous."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.drinking.committee",
+      "name": "Water user committee",
+      "category": "water",
+      "subcategory": "drinking",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Water user committees are inherently collective governance arrangements for shared infrastructure and cannot be meaningfully reduced to isolated households."
+        }
+      ],
+      "source_section": "Water.Drinking"
+    },
+    {
+      "id": "water.irrigation.kulo",
+      "name": "Canals (kulo), diversion weirs",
+      "category": "water",
+      "subcategory": "irrigation",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "Typically shared by multiple households",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Traditional irrigation canals in Nepal are typically shared and maintained by multiple farming households rather than privately duplicated per family."
+        }
+      ],
+      "source_section": "Water.Irrigation"
+    },
+    {
+      "id": "water.irrigation.pump",
+      "name": "Lift/pump irrigation",
+      "category": "water",
+      "subcategory": "irrigation",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "cycle_length": "S",
+      "depends_on": [
+        "water.irrigation.pipes"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Irrigation pumps can be owned individually or shared, but effective use still depends on water source access, pipes, fuel, or electricity."
+        }
+      ],
+      "source_section": "Water.Irrigation"
+    },
+    {
+      "id": "water.irrigation.pipes",
+      "name": "Pipes, hose for irrigation",
+      "category": "water",
+      "subcategory": "irrigation",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Pipes and hoses are modular irrigation inputs that can exist at household or shared scale depending on field layout and cost sharing."
+        }
+      ],
+      "source_section": "Water.Irrigation.Equipment"
+    },
+    {
+      "id": "water.irrigation.tiller",
+      "name": "Power tiller, tractor for land prep",
+      "category": "water",
+      "subcategory": "irrigation",
+      "scope_options": [
+        "H",
+        "N",
+        "W"
+      ],
+      "cycle_length": "M",
+      "notes": "Often shared; requires road",
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 5,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 3,
+        "time_horizon": "medium_term",
+        "notes": "Household ownership is possible but expensive and maintenance-heavy; shared use is often more efficient."
+      },
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Household ownership is physically possible but may be economically inferior to shared access in most villages."
+        }
+      ],
+      "source_section": "Water.Irrigation.Equipment"
+    },
+    {
+      "id": "water.emergency.handpump",
+      "name": "Hand pumps, community water points",
+      "category": "water",
+      "subcategory": "emergency",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Emergency water points are usually planned as shared resilience infrastructure because their purpose is collective fallback access during failure or disaster."
+        }
+      ],
+      "source_section": "Water.Emergency"
+    },
+    {
+      "id": "energy.cooking.firewood",
+      "name": "Firewood for cooking",
+      "category": "energy",
+      "subcategory": "cooking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "depends_on": [
+        "environment.forest"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household firewood use remains a common cooking fuel pattern in rural Nepal where biomass access persists."
+        }
+      ],
+      "source_section": "Energy.Cooking"
+    },
+    {
+      "id": "energy.cooking.biogas",
+      "name": "Biogas",
+      "category": "energy",
+      "subcategory": "cooking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "depends_on": [
+        "food.livestock"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Household biogas is feasible where livestock numbers, water, and maintenance capacity are sufficient, but adoption varies by settlement conditions."
+        }
+      ],
+      "source_section": "Energy.Cooking"
+    },
+    {
+      "id": "energy.cooking.lpg",
+      "name": "LPG/gas cylinders",
+      "category": "energy",
+      "subcategory": "cooking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "L",
+      "notes": "Requires road for delivery; money",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "LPG access depends on road delivery, market supply, and recurring cash expenditure, making it a household consumption need with long external dependency."
+        }
+      ],
+      "source_section": "Energy.Cooking"
+    },
+    {
+      "id": "energy.cooking.chulo",
+      "name": "Improved cookstove (chulo)",
+      "category": "energy",
+      "subcategory": "cooking",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Improved cookstoves are typically adopted and used at household level even when programs promoting them are organized collectively."
+        }
+      ],
+      "source_section": "Energy.Cooking"
+    },
+    {
+      "id": "energy.electricity.solar",
+      "name": "Solar home system, micro-hydro",
+      "category": "energy",
+      "subcategory": "electricity",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "H=solar lantern; V=micro-hydro grid",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "notes": "Rural electrification in Nepal commonly relies on household solar and community-scale hydro where grid extension is weak; exact deployment mix remains location-specific."
+        }
+      ],
+      "source_section": "Energy.Electricity"
+    },
+    {
+      "id": "energy.electricity.grid",
+      "name": "Grid connection, micro-grid",
+      "category": "energy",
+      "subcategory": "electricity",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Grid connection and village-scale distribution are collective infrastructure systems that depend on external networks, regulation, and capital investment."
+        }
+      ],
+      "source_section": "Energy.Electricity"
+    },
+    {
+      "id": "energy.electricity.streetlight",
+      "name": "Street lighting",
+      "category": "energy",
+      "subcategory": "electricity",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Street lighting serves shared public circulation space and is therefore a ward or village public good rather than a standalone household asset."
+        }
+      ],
+      "source_section": "Energy.Electricity"
+    },
+    {
+      "id": "energy.mechanical.mill",
+      "name": "Grinding mill, rice huller",
+      "category": "energy",
+      "subcategory": "mechanical",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "H=hand mill; V=electric mill",
+      "barriers": [
+        {
+          "type": "cost",
+          "description": "Electric/diesel mill too expensive per household; hand mill is H-feasible",
+          "holds_at": "N",
+          "removable": true
+        }
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Mechanical milling can exist from household hand tools to village electric mills, but larger powered systems usually become shared productive infrastructure."
+        }
+      ],
+      "source_section": "Energy.Mechanical"
+    },
+    {
+      "id": "energy.mechanical.coldstore",
+      "name": "Cold storage, refrigeration",
+      "category": "energy",
+      "subcategory": "mechanical",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "depends_on": [
+        "energy.electricity.solar"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Cold storage generally requires reliable energy, equipment maintenance, and enough throughput to justify collective deployment."
+        }
+      ],
+      "source_section": "Energy.Mechanical"
+    },
+    {
+      "id": "food.agri.seeds",
+      "name": "Seeds, seed bank",
+      "category": "food",
+      "subcategory": "agriculture",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "S",
+      "notes": "H=own saved; V=community seed bank",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Seed systems in rural agriculture commonly mix household seed saving with shared exchange or community banking for resilience and varietal access."
+        }
+      ],
+      "source_section": "Food.Agriculture"
+    },
+    {
+      "id": "food.agri.fertilizer",
+      "name": "Fertilizer (compost, manure, chemical)",
+      "category": "food",
+      "subcategory": "agriculture",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Compost, manure, and small-scale fertilizer use are typically managed at household or nearby shared scale in village agriculture."
+        }
+      ],
+      "source_section": "Food.Agriculture"
+    },
+    {
+      "id": "food.agri.tools",
+      "name": "Agricultural tools (plough, sickle, kodalo)",
+      "category": "food",
+      "subcategory": "agriculture",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "cycle_length": "S",
+      "notes": "N=shared/borrowed",
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 2,
+        "maintenance_cost_band": 1,
+        "implementation_difficulty_band": 1,
+        "time_horizon": "immediate",
+        "notes": "Low-cost household ownership is realistic for basic tools."
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Basic agricultural hand tools are typically cheap and individually ownable relative to larger productive assets."
+        }
+      ],
+      "source_section": "Food.Agriculture"
+    },
+    {
+      "id": "food.staples.own",
+      "name": "Own staple production (rice, maize, millet)",
+      "category": "food",
+      "subcategory": "staples",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "notes": "Shortest cycle: produce and consume",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household staple production is the core self-sufficiency case in subsistence-oriented rural farming systems."
+        }
+      ],
+      "source_section": "Food.Staples"
+    },
+    {
+      "id": "food.vegetables.kitchen",
+      "name": "Kitchen garden, seasonal produce",
+      "category": "food",
+      "subcategory": "vegetables",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Kitchen gardens are a common household-level mechanism for dietary diversity and short-cycle produce supply."
+        }
+      ],
+      "source_section": "Food.Vegetables"
+    },
+    {
+      "id": "food.livestock",
+      "name": "Livestock (buffalo, goats, chickens)",
+      "category": "food",
+      "subcategory": "livestock",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Smallholder livestock is commonly owned and managed at household level, even when grazing or veterinary services are partly shared."
+        }
+      ],
+      "source_section": "Food.Livestock"
+    },
+    {
+      "id": "food.storage.bharako",
+      "name": "Grain storage (bharako)",
+      "category": "food",
+      "subcategory": "storage",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household grain storage is a standard component of food security in agrarian villages and directly supports self-reliance between harvests."
+        }
+      ],
+      "source_section": "Food.Storage"
+    },
+    {
+      "id": "food.storage.cold",
+      "name": "Cold storage for produce",
+      "category": "food",
+      "subcategory": "storage",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "depends_on": [
+        "energy.mechanical.coldstore"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Produce cold storage usually needs shared infrastructure, stable energy, and sufficient market volume, making ward or village placement more realistic than household duplication."
+        }
+      ],
+      "source_section": "Food.Storage"
+    },
+    {
+      "id": "food.processing.mill",
+      "name": "Rice mill, oil mill, flour mill",
+      "category": "food",
+      "subcategory": "processing",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "barriers": [
+        {
+          "type": "cost",
+          "description": "Electric mill expensive for single household; hand mill is H-feasible but slow",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "infrastructure",
+          "description": "Electric mill needs electricity supply",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 2,
+        "implementation_difficulty_band": 2,
+        "time_horizon": "medium_term",
+        "notes": "Hand mills are feasible quickly; powered mills require more capital and energy."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Post-harvest practices of horticultural crops in Nepal: Issues and management",
+          "url": "https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management",
+          "notes": "Supports the importance of local processing and storage capacity, though household-vs-shared deployment remains a planning judgment."
+        }
+      ],
+      "source_section": "Food.Storage"
+    },
+    {
+      "id": "food.market.haat",
+      "name": "Haat bazaar, weekly market",
+      "category": "food",
+      "subcategory": "markets",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "notes": "Village-level only; involves money, conservation",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Weekly markets require enough buyers, sellers, and circulation to function, which makes village-scale aggregation the practical minimum."
+        }
+      ],
+      "source_section": "Food.Markets"
+    },
+    {
+      "id": "food.market.shop",
+      "name": "Local shops",
+      "category": "food",
+      "subcategory": "markets",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Local retail shops serve a shared customer base and therefore usually emerge at ward or village scale rather than household scale."
+        }
+      ],
+      "source_section": "Food.Markets"
+    },
+    {
+      "id": "food.nutrition.schoolmeal",
+      "name": "School meals, mid-day meal",
+      "category": "food",
+      "subcategory": "nutrition",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "depends_on": [
+        "education.school"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "School meals are tied to collective schooling provision and program administration, not independent household delivery inside the model."
+        }
+      ],
+      "source_section": "Food.Nutrition"
+    },
+    {
+      "id": "shelter.construction",
+      "name": "House construction, materials",
+      "category": "shelter",
+      "subcategory": "construction",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "cycle_length": "M",
+      "notes": "N=shared labor (parma)",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Houses are household assets, but construction often relies on reciprocal labor and shared local material knowledge."
+        }
+      ],
+      "source_section": "Shelter"
+    },
+    {
+      "id": "shelter.comfort",
+      "name": "Fireplace, warmth, lighting",
+      "category": "shelter",
+      "subcategory": "comfort",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Everyday thermal comfort and household lighting are primarily managed within the home, even when fuel or electricity has external dependencies."
+        }
+      ],
+      "source_section": "Shelter"
+    },
+    {
+      "id": "shelter.toilet",
+      "name": "Toilet (pit, pour-flush, septic)",
+      "category": "shelter",
+      "subcategory": "facilities",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Basic sanitation policy and practice both favor household toilet access, even where waste treatment beyond the plot may require shared systems."
+        }
+      ],
+      "source_section": "Shelter"
+    },
+    {
+      "id": "clothing.fabric",
+      "name": "Fabric, tailoring, repair",
+      "category": "clothing",
+      "subcategory": "basic",
+      "scope_options": [
+        "H",
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "S",
+      "notes": "H=own weaving; V=market",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Clothing needs can be met through household production, local tailoring, or market purchase depending on skill, income, and access."
+        }
+      ],
+      "source_section": "Clothing"
+    },
+    {
+      "id": "transport.trail",
+      "name": "Foot trails, ghat, bridges",
+      "category": "transport",
+      "subcategory": "no_road",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "Shared infrastructure",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "citation",
+          "notes": "In remote Nepal, foot trails and bridges are foundational transport infrastructure and remain essential even where roads expand unevenly."
+        }
+      ],
+      "source_section": "Transport"
+    },
+    {
+      "id": "transport.packanimal",
+      "name": "Pack animals, porters",
+      "category": "transport",
+      "subcategory": "no_road",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "cycle_length": "M",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Pack transport may be individually owned or shared among nearby households where roads are absent and terrain constrains vehicles."
+        }
+      ],
+      "source_section": "Transport"
+    },
+    {
+      "id": "transport.road",
+      "name": "Motor road, vehicles",
+      "category": "transport",
+      "subcategory": "with_road",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Motor roads are public infrastructure requiring collective construction, maintenance, and external state coordination."
+        }
+      ],
+      "source_section": "Transport"
+    },
+    {
+      "id": "communication.radio",
+      "name": "Radio, word of mouth",
+      "category": "communication",
+      "subcategory": "traditional",
+      "scope_options": [
+        "H",
+        "V"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Radio use can be individual household consumption even when the broader information ecosystem includes village announcements and community broadcasting."
+        }
+      ],
+      "source_section": "Communication"
+    },
+    {
+      "id": "communication.mobile",
+      "name": "Mobile, telephony",
+      "category": "communication",
+      "subcategory": "telephony",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "M",
+      "notes": "Tower is V-level; handset is H",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Mobile use is a household-level consumption need, but functionality depends on externally provided network coverage and device affordability."
+        }
+      ],
+      "source_section": "Communication"
+    },
+    {
+      "id": "communication.internet",
+      "name": "Internet, digital services",
+      "category": "communication",
+      "subcategory": "digital",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "barriers": [
+        {
+          "type": "infrastructure",
+          "description": "Needs tower/fiber and devices; H-level possible with mobile data",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Device and data plan cost",
+          "holds_at": "H",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "H",
+        "investment_cost_band": 3,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 2,
+        "time_horizon": "near_term",
+        "notes": "Household access is feasible where coverage exists, but recurring cost remains high."
+      },
+      "confidence": "provisional",
+      "evidence": [
+        {
+          "kind": "estimate",
+          "notes": "Household internet feasibility depends heavily on signal availability, device ownership, and recurring data affordability."
+        }
+      ],
+      "source_section": "Communication"
+    },
+    {
+      "id": "education.ecd",
+      "name": "ECD, daycare, bal bikas",
+      "category": "education",
+      "subcategory": "early",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Early childhood development centers depend on enough children, caregivers, and organized community or institutional support, which makes them collective services."
+        }
+      ],
+      "source_section": "Education"
+    },
+    {
+      "id": "education.school",
+      "name": "Primary, secondary school",
+      "category": "education",
+      "subcategory": "school",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "barriers": [
+        {
+          "type": "population",
+          "description": "Needs enough children for classes; teacher must be paid",
+          "holds_at": "W",
+          "removable": false
+        },
+        {
+          "type": "expertise",
+          "description": "Trained teachers required",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "W",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 4,
+        "implementation_difficulty_band": 4,
+        "time_horizon": "long_term",
+        "notes": "Ward-level schooling is feasible only where enrollment and staffing can be sustained."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Access to infrastructure and human well-being: evidence from rural Nepal",
+          "url": "https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf",
+          "notes": "Supports the importance of local service access and the education burden in remote areas; ward-level placement remains a model judgment tied to population."
+        }
+      ],
+      "source_section": "Education"
+    },
+    {
+      "id": "education.vocational",
+      "name": "Vocational training",
+      "category": "education",
+      "subcategory": "vocational",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Vocational training usually depends on specialist instructors, equipment, and organized cohorts, which makes village or higher aggregation the realistic minimum in this model."
+        }
+      ],
+      "source_section": "Education"
+    },
+    {
+      "id": "health.healthpost",
+      "name": "Health post, FCHV",
+      "category": "health",
+      "subcategory": "primary",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "barriers": [
+        {
+          "type": "expertise",
+          "description": "Needs trained health worker, medical supplies",
+          "holds_at": "W",
+          "removable": true
+        },
+        {
+          "type": "cost",
+          "description": "Medicine stock, equipment require ongoing funding",
+          "holds_at": "W",
+          "removable": true
+        }
+      ],
+      "feasibility": {
+        "target_scope": "W",
+        "investment_cost_band": 4,
+        "maintenance_cost_band": 5,
+        "implementation_difficulty_band": 4,
+        "time_horizon": "medium_term",
+        "notes": "Ward-level health services are feasible with recurrent staffing and drug supply."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "citation",
+          "citation": "Assessing the health impacts of a Comprehensive Rural Health Project in Nepal",
+          "url": "https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0004458",
+          "notes": "Supports the importance of localized rural health service provision and community health interventions."
+        }
+      ],
+      "source_section": "Health"
+    },
+    {
+      "id": "health.hospital",
+      "name": "Hospital, referral",
+      "category": "health",
+      "subcategory": "referral",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "notes": "External; 10% scope",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Hospital and referral care require specialist infrastructure, staffing, and regulation beyond ordinary household or ward capacity."
+        }
+      ],
+      "source_section": "Health"
+    },
+    {
+      "id": "health.maternal",
+      "name": "Maternal, child health",
+      "category": "health",
+      "subcategory": "maternal",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "H=home birth; V=birthing center",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Maternal and child health spans household care and formal service access, making multi-scope placement appropriate in the model."
+        }
+      ],
+      "source_section": "Health"
+    },
+    {
+      "id": "governance.ward_office",
+      "name": "Ward office, municipal office",
+      "category": "governance",
+      "subcategory": "offices",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Formal ward and municipal administration is inherently collective and cannot be reduced to household or neighbor scope."
+        }
+      ],
+      "source_section": "Administration"
+    },
+    {
+      "id": "governance.documentation",
+      "name": "Citizenship, land registration",
+      "category": "governance",
+      "subcategory": "documentation",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Civil documentation and land registration are formal state-recognized processes that inherently depend on collective administrative institutions."
+        }
+      ],
+      "source_section": "Administration"
+    },
+    {
+      "id": "governance.dispute",
+      "name": "Dispute resolution, mediation",
+      "category": "governance",
+      "subcategory": "justice",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Village disputes are often mediated first through nearby social structures before escalating to wider formal institutions, making multi-scope placement realistic."
+        }
+      ],
+      "source_section": "Administration"
+    },
+    {
+      "id": "commerce.bank",
+      "name": "Bank, mobile banking",
+      "category": "commerce",
+      "subcategory": "finance",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Banking infrastructure depends on regulated financial systems, external capital, and institutional interfaces beyond neighborhood or household scope."
+        }
+      ],
+      "source_section": "Commerce"
+    },
+    {
+      "id": "commerce.cooperative",
+      "name": "Cooperatives, savings groups",
+      "category": "commerce",
+      "subcategory": "finance",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Savings groups and cooperatives depend on group trust, pooled capital, and collective governance rather than isolated household operation."
+        }
+      ],
+      "source_section": "Commerce"
+    },
+    {
+      "id": "commerce.parma",
+      "name": "Labor exchange (parma)",
+      "category": "commerce",
+      "subcategory": "barter",
+      "scope_options": [
+        "N"
+      ],
+      "cycle_length": "M",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Parma is inherently a neighbor-scale reciprocal labor arrangement and cannot exist as a one-household activity."
+        }
+      ],
+      "source_section": "Commerce"
+    },
+    {
+      "id": "environment.forest",
+      "name": "Community forest, grazing land",
+      "category": "environment",
+      "subcategory": "natural",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "barriers": [
+        {
+          "type": "geography",
+          "description": "Forest is a shared natural resource; cannot be divided per-household",
+          "holds_at": "W",
+          "removable": false
+        },
+        {
+          "type": "regulation",
+          "description": "Community forest regulations require collective management",
+          "holds_at": "W",
+          "removable": false
+        }
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Community forest governance is inherently collective and not realistically reducible to isolated household ownership."
+        }
+      ],
+      "source_section": "Environment"
+    },
+    {
+      "id": "conservation.grain_bank",
+      "name": "Grain bank, seed bank",
+      "category": "conservation",
+      "subcategory": "community",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Grain and seed banks are collective resilience institutions that depend on shared governance, contribution rules, and managed reserves."
+        }
+      ],
+      "source_section": "Resource Conservation"
+    },
+    {
+      "id": "conservation.food_drying",
+      "name": "Drying, pickling, fermentation",
+      "category": "conservation",
+      "subcategory": "food",
+      "scope_options": [
+        "H"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Household preservation by drying, pickling, and fermentation is a common short-cycle technique for off-season food security."
+        }
+      ],
+      "source_section": "Resource Conservation"
+    },
+    {
+      "id": "sanitation.waste",
+      "name": "Waste disposal, drainage",
+      "category": "sanitation",
+      "subcategory": "waste",
+      "scope_options": [
+        "H",
+        "W",
+        "V"
+      ],
+      "cycle_length": "S",
+      "notes": "H=compost; V=solid waste mgmt",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Rural waste handling typically mixes household composting and drainage with shared cleanup or disposal infrastructure when density rises."
+        }
+      ],
+      "source_section": "Sanitation"
+    },
+    {
+      "id": "social.temple",
+      "name": "Temple, gumba, community hall",
+      "category": "social",
+      "subcategory": "religious",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Shared religious and community spaces serve collective ritual and gathering functions rather than isolated household use."
+        }
+      ],
+      "source_section": "Social"
+    },
+    {
+      "id": "social.festival",
+      "name": "Festivals, jatras",
+      "category": "social",
+      "subcategory": "cultural",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Festivals are collective cultural events whose meaning and viability depend on participation beyond the household."
+        }
+      ],
+      "source_section": "Social"
+    },
+    {
+      "id": "industry.craft",
+      "name": "Weaving, pottery, handicraft",
+      "category": "industry",
+      "subcategory": "cottage",
+      "scope_options": [
+        "H",
+        "N"
+      ],
+      "cycle_length": "S",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "field_observation",
+          "notes": "Cottage craft production often happens inside the household while still benefiting from neighbor-scale sharing of tools, skill, or exchange."
+        }
+      ],
+      "source_section": "Industry"
+    },
+    {
+      "id": "industry.mill",
+      "name": "Rice mill, sawmill",
+      "category": "industry",
+      "subcategory": "processing",
+      "scope_options": [
+        "N",
+        "W",
+        "V"
+      ],
+      "cycle_length": "M",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "model_assumption",
+          "notes": "Processing mills usually need enough throughput, power, and maintenance to justify shared deployment rather than strict household ownership."
+        }
+      ],
+      "source_section": "Industry"
+    },
+    {
+      "id": "infrastructure.road",
+      "name": "Roads, bridges, street lighting",
+      "category": "infrastructure",
+      "subcategory": "public",
+      "scope_options": [
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Roads, bridges, and public lighting are classic shared infrastructure systems requiring collective planning and maintenance."
+        }
+      ],
+      "source_section": "Public Infrastructure"
+    },
+    {
+      "id": "security.disaster",
+      "name": "Disaster response, early warning",
+      "category": "security",
+      "subcategory": "emergency",
+      "scope_options": [
+        "W",
+        "V"
+      ],
+      "cycle_length": "L",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Early warning and organized disaster response require shared communication and collective coordination beyond single households."
+        }
+      ],
+      "source_section": "Security"
+    },
+    {
+      "id": "legal.rights",
+      "name": "Marriage, inheritance, land rights",
+      "category": "legal",
+      "subcategory": "rights",
+      "scope_options": [
+        "H",
+        "V"
+      ],
+      "cycle_length": "M",
+      "notes": "H=family custom; V=registration",
+      "confidence": "high",
+      "evidence": [
+        {
+          "kind": "policy",
+          "notes": "Family rights practices may be experienced at household level, but legal recognition and enforceability depend on wider formal institutions."
+        }
+      ],
+      "source_section": "Legal"
+    }
+  ]
+}

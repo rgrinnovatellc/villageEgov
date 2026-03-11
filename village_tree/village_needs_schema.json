@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/village-needs-schema.json",
+  "title": "Village Needs Model Schema",
+  "description": "Schema for the village needs catalog, taxonomy, and optional village instances.",
+  "type": "object",
+  "required": ["version", "taxonomy", "needs"],
+  "properties": {
+    "version": {
+      "type": "object",
+      "required": ["schema", "taxonomy"],
+      "properties": {
+        "schema": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+        "taxonomy": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" }
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "description": "Scope levels and definitions",
+      "properties": {
+        "scope_levels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["code", "name", "order", "min_families", "max_families"],
+            "properties": {
+              "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+              "name": { "type": "string" },
+              "order": { "type": "integer", "minimum": 0 },
+              "min_families": { "type": "integer", "minimum": 1 },
+              "max_families": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+    "needs": {
+      "type": "array",
+      "description": "All needs defined in the village needs technical document",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "scope_options"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_.]+$",
+            "description": "Unique id: category.subcategory.item"
+          },
+          "name": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": ["water", "energy", "food", "shelter", "clothing", "transport", "communication", "education", "health", "governance", "commerce", "environment", "conservation", "sanitation", "social", "industry", "vulnerable", "technology", "infrastructure", "security", "legal", "identity"]
+          },
+          "subcategory": { "type": "string" },
+          "scope_options": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+            "minItems": 1,
+            "description": "Levels at which this need can be satisfied"
+          },
+          "cycle_length": {
+            "type": "string",
+            "enum": ["S", "M", "L"],
+            "description": "S=short (household), M=medium (neighbor/ward), L=long (village)"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Ids of needs this one requires"
+          },
+          "barriers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "description"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["cost", "expertise", "population", "infrastructure", "geography", "regulation"],
+                  "description": "Type of barrier preventing push-down to lower scope"
+                },
+                "description": { "type": "string" },
+                "holds_at": {
+                  "type": "string",
+                  "pattern": "^[A-Z][A-Z0-9_]*$",
+                  "description": "Scope level this barrier prevents pushing below"
+                },
+                "removable": {
+                  "type": "boolean",
+                  "description": "Can this barrier be removed with investment/effort?"
+                }
+              }
+            },
+            "description": "Why this need stays at higher scope than min; what prevents push-down"
+          },
+          "feasibility": {
+            "type": "object",
+            "properties": {
+              "target_scope": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_]*$",
+                "description": "Recommended next lower scope to target for realistic push-down"
+              },
+              "investment_cost_band": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5,
+                "description": "1=low capital, 5=very high capital"
+              },
+              "maintenance_cost_band": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5,
+                "description": "1=low maintenance, 5=very high maintenance"
+              },
+              "implementation_difficulty_band": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5,
+                "description": "1=easy to implement, 5=very difficult"
+              },
+              "time_horizon": {
+                "type": "string",
+                "enum": ["immediate", "near_term", "medium_term", "long_term"],
+                "description": "Planning horizon for realistic deployment"
+              },
+              "notes": { "type": "string" }
+            },
+            "description": "Feasibility profile for lowering dependency routes"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "provisional"],
+            "description": "Confidence level for the current classification or feasibility judgment"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["kind", "notes"],
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": ["citation", "field_observation", "policy", "estimate", "model_assumption"]
+                },
+                "citation": { "type": "string" },
+                "url": { "type": "string" },
+                "notes": { "type": "string" }
+              }
+            },
+            "description": "Evidence supporting the need definition or feasibility judgment"
+          },
+          "notes": { "type": "string" },
+          "source_section": { "type": "string" }
+        }
+      }
+    },
+    "villages": {
+      "type": "array",
+      "description": "Optional: specific village instances for 3D parallel trees",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "num_households": { "type": "integer" },
+          "num_wards": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Village Governance Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Village Governance System</p>
+      <h1>Public Intervention Dashboard</h1>
+      <p class="lede">A compact public view of needs, barriers, route-shortening priorities, and budget scenarios generated directly from the canonical governance model.</p>
+    </section>
+
+    <section class="cards" id="summary-cards"></section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Top Interventions</h2>
+        <p>Ranked by route savings against cost and implementation effort.</p>
+      </div>
+      <div id="interventions"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Budget Scenarios</h2>
+        <p>Named planning packages generated from the same intervention model.</p>
+      </div>
+      <div class="scenario-grid" id="scenarios"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Dependency Graph</h2>
+        <p>Interactive route graph from households and sub-village units to the nodes that currently satisfy their needs.</p>
+      </div>
+      <div class="graph-toolbar">
+        <label for="graph-filter">Filter by need</label>
+        <select id="graph-filter" class="search">
+          <option value="">All routed needs</option>
+        </select>
+      </div>
+      <div class="graph-stats" id="graph-stats"></div>
+      <div class="graph-stage" id="graph"></div>
+      <div class="graph-details" id="graph-details"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Need Catalog</h2>
+        <p>Search by id, name, or category.</p>
+      </div>
+      <input id="need-search" class="search" type="search" placeholder="Search needs...">
+      <div id="needs"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

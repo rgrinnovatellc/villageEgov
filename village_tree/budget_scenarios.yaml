@@ -1,0 +1,17 @@
+version: '1.0'
+budget_scenarios:
+  - id: bootstrap
+    name: Bootstrap Quick Wins
+    budget_band: 5
+    objective: maximize_hop_savings
+    notes: Very limited resources. Prefer immediate, low-cost, high-certainty gains.
+  - id: practical
+    name: Practical Upgrade Path
+    budget_band: 10
+    objective: maximize_hop_savings
+    notes: Moderate village investment. Combine one major intervention with smaller fast wins.
+  - id: transformation
+    name: High Self-Sufficiency Push
+    budget_band: 16
+    objective: maximize_hop_savings
+    notes: Aggressive route-shortening program for long-term self-sufficiency.

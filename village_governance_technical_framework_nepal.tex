@@ -1,0 +1,1932 @@
+% Village Life Needs: A Comprehensive Framework for Nepal
+% Context: From remote rural areas with no roads and no electricity to fully connected villages
+% Think large. Think everything.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage{tabularx}
+
+\geometry{margin=2.5cm}
+\setlist{nosep, leftmargin=*}
+\setlist[description]{style=nextline,leftmargin=2.8cm}
+\setlength{\emergencystretch}{2em}
+
+\title{Technical Framework for Village Needs, Dependency Routes, and Governance in Nepal}
+\author{Uddhav P. Gautam}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Purpose and Scope}
+
+This document defines a technical framework for understanding village needs in Nepal across the full continuum from fully remote settlements to fully connected villages. Its first objective is to identify and organize local needs as a rich model rather than as an unstructured list. Each need can be classified, categorized, and extended with metadata such as scope, dependencies, barriers, feasibility, and evidence. The framework then maps those needs onto a governance tree that runs from household leaf nodes upward through neighbor groups, wards, villages, and, where required, higher levels of government.
+
+Within this model, governance is treated as the process by which needs are satisfied, coordinated, escalated, and tracked across levels. The core analytical concept is the dependency route: the path from a household to the node that satisfies a given need. Shorter routes imply less coordination overhead, fewer points of failure, and greater household self-reliance. Longer routes imply greater institutional dependence and fragility. This makes route minimization a design principle for resilient local governance. In this document, e-governance is not the starting point; it is the operational layer through which identified needs are processed and managed.
+
+The long-term purpose of this document is implementation. It is intended to serve as a specification and guideline base for software that models village needs, represents governance structure, analyzes dependency routes, and supports planning for villages in Nepal.
+
+\tableofcontents
+\newpage
+
+%==============================================================================
+\section{Introduction}
+%==============================================================================
+
+This document aims to identify the full range of local village needs in Nepal and to model them as a structured system. The central task is not merely to list needs, but to make each need analytically useful by classifying it, categorizing it, and enriching it with metadata. In this framework, a need can carry information about the scope at which it can be satisfied, the dependencies it has on other needs, the barriers that keep it at a higher level, and the evidence or planning judgment that supports its placement.
+
+Nepal's topography---from the high Himalayas to the Terai plains---and its uneven infrastructure produce villages under radically different conditions. Some settlements are \textbf{fully remote}: there are no motor roads, no grid electricity, and access may be only by foot or mule. Other settlements are \textbf{fully connected}: they have roads, electricity, mobile service, and internet access. Most villages lie somewhere between these two extremes. A useful framework must therefore describe the full continuum rather than assume one standard village form.
+
+This document models this reality through a governance tree. Households are treated as the leaf nodes of the tree, and higher levels such as neighbor groups, wards, villages, and larger government institutions form the upper layers. Once local needs are identified and richly described, they can be mapped onto this tree to show where they are satisfied and how they are processed through governance structures. In that sense, e-governance is the operational mechanism for processing needs through the system, but the foundation of the work is the structured modeling of the needs themselves.
+
+\subsection{Design Goal: Minimize Dependency Routes}
+
+The primary goal of this system is \textbf{village self-sufficiency}. Every need a household has creates a \textit{dependency route}---a path from the household to whichever node satisfies that need. The length of that route is measured in scope hops from H to N to W to V. That length is a direct measure of how much external coordination, governance, and fragility the household accepts.
+
+\begin{description}
+    \item[Route length 0:] Household satisfies the need itself. No dependency. Maximum resilience. Example: own rice production, own firewood.
+    \item[Route length 1:] Household depends on its neighbor group. Coordination remains minimal because the group usually contains 2--5 families. 
+    Example: labor exchange through \textit{parma} and shared tools.
+    \item[Route length 2:] Household depends on its ward. Requires ward-level infrastructure and governance. Example: piped water, ward trail.
+    \item[Route length 3:] Household depends on the village. Requires village-wide institutions. Example: school, health post, haat bazaar.
+\end{description}
+
+These dependency routes are analogous to \textbf{layers in a software framework} or \textbf{layers of government}. Each hop adds a layer of coordination, 
+a potential point of failure, and a governance cost. The insight:
+
+\begin{quote}
+\textit{The shorter the dependency routes, the simpler the system, the easier it is to govern, and the more self-sufficient the village becomes. 
+The goal is to push every need to the lowest possible scope level.}
+\end{quote}
+
+\textbf{Irreducible dependencies.} Some needs have a minimum scope that cannot be reduced. A school requires enough children and therefore usually 
+sits at ward or village level. A haat bazaar requires enough traders and therefore sits at village level. A hospital requires specialist infrastructure 
+and remains an external dependency. These set a floor on route length. The optimization target is simple: for every need where the scope \textit{can} be lower, push it down.
+
+\textbf{Self-sufficiency score.} The system measures this through two metrics described in Part X:
+\begin{itemize}
+    \item \textbf{Average route length:} The mean number of scope hops across all household dependencies. Lower is better.
+    \item \textbf{Push-down opportunities:} Needs currently satisfied at a higher scope than their minimum possible scope. These are actionable 
+    targets for increasing self-sufficiency.
+\end{itemize}
+
+\textbf{Document structure:} Part I covers survival basics and includes water, energy, food, shelter, and clothing. Part II covers transport 
+and communication. Part III covers services and includes education and health. Part IV covers governance and economy. Part V covers environment, 
+conservation, and sanitation. Part VI covers social life and livelihood. Part VII covers infrastructure, security, and governance. 
+Part VIII covers the fully independent village. Part IX covers the technical specification. Part X covers decision and feasibility review. Part XI contains references.
+
+%==============================================================================
+\part{Part I: Survival Basics}
+%==============================================================================
+
+\section{Water}
+
+\subsection{Drinking \& Domestic}
+\begin{itemize}
+    \item Springs such as \textit{kuwa} and \textit{dhara}, along with wells, rivers, and streams
+    \item Rainwater harvesting, rooftop collection
+    \item Piped supply, gravity-fed systems
+    \item Water purification: boiling, filters, chlorine, UV
+    \item Storage: tanks, \textit{ghagri}, \textit{gagri}
+    \item Traditional sources include \textit{ghaite} stone spouts and \textit{hitri}
+    \item Water user committees, maintenance
+    \item Seasonal scarcity: dry season, monsoon turbidity
+    \item Water quality testing
+\end{itemize}
+
+\subsection{Irrigation}
+\begin{itemize}
+    \item Canals called \textit{kulo} and diversion weirs
+    \item Lift irrigation, pump irrigation
+    \item Drip and sprinkler systems where they are feasible
+    \item Traditional \textit{pani ghatta} water mills
+    \item Pond, reservoir
+    \item Snowmelt and glacier-fed sources in high-altitude areas
+\end{itemize}
+
+\subsection{Irrigation Equipment \& Machinery}
+To make irrigation easier---especially where gravity-fed canals are insufficient or land needs preparation---villages need at least the following.
+
+\textbf{Water lifting \& conveyance:}
+\begin{itemize}
+    \item \textbf{Pump:} Diesel, electric, or solar---to lift water from well, river, stream, pond when source is below field
+    \item \textbf{Pipes \& hose:} PVC, HDPE, flexible hose---to convey water from source to field; suction and delivery pipes
+    \item \textbf{Hand/treadle pump:} Where no fuel or electricity---human-powered lift
+\end{itemize}
+
+\textbf{Land preparation \& earthwork:}
+\begin{itemize}
+    \item \textbf{Power tiller:} A two-wheel tractor used for plowing, tilling, and land leveling. It helps field leveling for 
+    even water distribution and reduces runoff. It is common in the Terai and in accessible hill areas.
+    \item \textbf{Tractor:} A four-wheel machine used where terrain and roads allow. It supports plowing, tilling, pulling trailers, 
+    and sometimes pumping. It is suited to heavier work.
+    \item \textbf{Attachments:} Plow, cultivator, leveler, ridger---for tiller/tractor
+    \item \textbf{Shovel, spade, \textit{kodalo}:} Manual canal digging, repair---always needed; bare minimum when no machinery
+\end{itemize}
+
+\textbf{Canal \& distribution:}
+\begin{itemize}
+    \item \textbf{Canal lining:} Cement, plastic sheet---reduces seepage, saves water
+    \item \textbf{Gates, valves:} To control flow, allocate water
+    \item \textbf{Drip kit:} Main line, laterals, emitters---efficient for vegetables, orchards; saves water
+    \item \textbf{Sprinkler:} Pipes, sprinkler heads---for larger area; needs pressure
+\end{itemize}
+
+\textbf{Context:}
+\begin{itemize}
+    \item \textbf{No road:} Tractors and tillers cannot reach. Manual tools, portable solar pumps, or gravity systems dominate.
+    \item \textbf{With road:} Power tillers, tractors, and diesel pumps become feasible. Shared or cooperative ownership is common. 
+    Farmer-managed irrigation systems account for about two-thirds of Nepal's irrigated area and often outperform agency-managed systems. See References.
+    \item \textbf{With electricity:} Electric pump, solar pump---no fuel dependency
+    \item \textbf{Maintenance:} Spare parts, repair skill---pump and machinery need upkeep
+\end{itemize}
+
+\subsection{Emergency \& Backup}
+\begin{itemize}
+    \item Hand pumps, tube wells
+    \item Community water points
+    \item Emergency tankers during disasters
+\end{itemize}
+
+\section{Energy}
+
+\subsection{Cooking Fuel}
+\begin{itemize}
+    \item Firewood: primary in remote areas; sustainable harvesting, community forests
+    \item Improved cookstoves such as the \textit{improved chulo}, along with smoke hoods
+    \item Biogas: where livestock exists
+    \item LPG/gas cylinders: where roads allow delivery
+    \item Kerosene: backup; lanterns, stoves
+    \item Solar cookers: experimental
+    \item Electric stoves: where reliable electricity exists
+    \item Agricultural residue: straw, dung cakes
+\end{itemize}
+
+\subsection{Electricity}
+\begin{itemize}
+    \item \textbf{Off-grid:} Solar home systems, micro-hydro, and pico-hydro. Rural Nepal has about 3,300 micro-hydro plants. 
+    Research ranks micro-hydro as the strongest option for rural electrification, followed by solar. See References.
+    \item Solar lanterns, solar charging stations
+    \item Grid connection that is often unreliable
+    \item Micro-grid, mini-grid
+    \item Backup sources such as diesel generators and batteries
+    \item Street lighting
+    \item Community charging points
+\end{itemize}
+
+\subsection{Mechanical \& Productive Use}
+\begin{itemize}
+    \item Grinding mills such as \textit{ghatta}, along with rice hullers
+    \item Irrigation pumps
+    \item Welding, carpentry power tools
+    \item Refrigeration, cold storage
+    \item Human and animal power in places without electricity
+\end{itemize}
+
+\subsection{Vehicular \& Machine Fuel}
+\begin{itemize}
+    \item Petrol and diesel where roads exist
+    \item Kerosene for generators
+    \item Electric vehicles and charging as an emerging option
+\end{itemize}
+
+%==============================================================================
+\section{Food}
+%==============================================================================
+
+\subsection{Agriculture}
+\begin{itemize}
+    \item Seeds include local, improved, and hybrid types, along with seed banks. Research in the mid-hills of Nepal shows 
+    that improved cultivars and crop yields are primary drivers of household food self-sufficiency. See Karki et al. 2015 in the References.
+    \item Fertilizers include organic sources such as compost and manure, along with chemical inputs such as urea and DAP.
+    \item Pesticides, herbicides
+    \item Tools include the plough called \textit{halo}, the sickle called \textit{hasiya}, along with \textit{kodalo}, \textit{khurpi}, and the spade.
+    \item Terraces, land leveling
+    \item Agricultural extension, training
+    \item Weather information, crop calendar
+    \item Pest control, crop protection
+\end{itemize}
+
+\subsection{Staples}
+\begin{itemize}
+    \item Rice, wheat, maize, millet, barley, buckwheat
+    \item Staple patterns vary by altitude. The Terai favors rice. Hill areas favor maize and millet. High hills favor buckwheat and potato.
+    \item Pulses, legumes
+\end{itemize}
+
+\subsection{Vegetables, Fruits \& Other}
+\begin{itemize}
+    \item Kitchen gardens, seasonal produce
+    \item Fruit trees include citrus, mango, banana, and apple in high-altitude areas
+    \item Spices, herbs
+    \item Storage: drying, pickling, smoking
+\end{itemize}
+
+\subsection{Livestock}
+\begin{itemize}
+    \item Buffalo, cows, goats, sheep, chickens, pigs, ducks
+    \item Milk, meat, eggs, manure, draft power
+    \item Fodder, grazing land
+    \item Veterinary services, vaccination
+    \item Beekeeping and fish farming in ponds
+\end{itemize}
+
+\subsection{Storage \& Processing}
+\begin{itemize}
+    \item Grain storage through \textit{bharako} and other forms of rodent protection
+    \item Cold storage in places where electricity exists
+    \item Rice mills, oil mills, flour mills
+    \item Cheese, ghee, and \textit{chyurpi}, which is dried cheese
+    \item Local processing vs. distant
+\end{itemize}
+
+\subsection{Markets \& Distribution}
+\begin{itemize}
+    \item Local shops, \textit{haat bazaar}, weekly markets
+    \item Access to district headquarters, wholesale
+    \item Fair price, exploitation
+    \item Food preservation for off-season
+\end{itemize}
+
+\subsection{Nutrition \& Security}
+\begin{itemize}
+    \item Dietary diversity
+    \item Fortified foods, iodized salt
+    \item School meals, mid-day meal
+    \item Emergency food, relief
+    \item Community kitchens during disasters
+    \item Malnutrition programs
+\end{itemize}
+
+%==============================================================================
+\section{Shelter \& Housing}
+%==============================================================================
+
+\subsection{Construction}
+\begin{itemize}
+    \item Materials: stone, mud, wood, bamboo, brick, tin roofing
+    \item Earthquake-resistant construction
+    \item Retrofitting of old houses
+    \item Ventilation and chimneys for smoke control
+    \item Insulation for cold areas
+\end{itemize}
+
+\subsection{Comfort}
+\begin{itemize}
+    \item Fireplace through the \textit{chulo} for warmth
+    \item Blankets, bedding
+    \item Lighting: sunlight, fire, kerosene, solar, electric
+\end{itemize}
+
+\subsection{Facilities}
+\begin{itemize}
+    \item Toilet: pit latrine, pour-flush, septic
+    \item Bathing area
+    \item Kitchen, storage
+\end{itemize}
+
+\subsection{Resettlement}
+\begin{itemize}
+    \item Landslide, flood relocation
+    \item Planned resettlement
+    \item Temporary shelter for disaster periods
+\end{itemize}
+
+%==============================================================================
+\section{Clothing \& Textiles}
+%==============================================================================
+
+\begin{itemize}
+    \item Fabric, cloth; local weaving vs. market
+    \item Tailoring, sewing, repair
+    \item Seasonal: winter, monsoon, summer
+    \item Traditional wear: \textit{daura suruwal}, \textit{sari}, \textit{gunyu}
+    \item Footwear: sandals, shoes, boots
+    \item School uniforms
+    \item Washing, drying
+\end{itemize}
+
+%==============================================================================
+\part{Part II: Transport \& Communication}
+%==============================================================================
+
+\section{Transport}
+
+\subsection{No Motor Roads}
+\begin{itemize}
+    \item Foot trails and \textit{ghat} stone steps. Research finds road access is the highest infrastructure priority in rural Nepal, 
+    and remote areas show 50--65\% lower per capita income. See References.
+    \item Trail maintenance, landslide clearance
+    \item Pack animals such as mules, horses, and yaks in high-altitude regions
+    \item Porters: human carriers
+    \item Ropeways for gravity goods through \textit{tatopani} systems and for passengers
+    \item River transport through boats, rafts, and canoes in the Terai and hill regions
+    \item Bridges: suspension, wooden, rope
+    \item Helicopter: emergency only
+\end{itemize}
+
+\subsection{With Motor Roads}
+\begin{itemize}
+    \item Buses, jeeps, trucks, tractors
+    \item Motorcycles, bicycles
+    \item Ambulance, emergency vehicles
+    \item Goods delivery
+    \item Bus stops, parking
+\end{itemize}
+
+\subsection{Infrastructure}
+\begin{itemize}
+    \item Road construction, maintenance
+    \item Culverts, drainage
+    \item Retaining walls
+    \item Ferry services on rivers
+    \item STOL airstrips in remote areas
+\end{itemize}
+
+\section{Communication}
+\subsection{Traditional \& Basic}
+\begin{itemize}
+    \item Postal service, radio through FM and Nepal Radio, word of mouth, messengers, and bulletin boards
+\end{itemize}
+\subsection{Telephony}
+\begin{itemize}
+    \item Mobile service through 2G, 3G, and 4G, along with rare landlines and satellite phones for emergencies
+\end{itemize}
+\subsection{Internet \& Digital}
+\begin{itemize}
+    \item Mobile data, broadband, rare fiber links, cyber cafes, and community internet
+    \item Smartphones, social media, e-governance, online services, digital payments, mobile banking
+\end{itemize}
+\subsection{Media}
+\begin{itemize}
+    \item Television, cable, satellite service, and newspapers where available
+\end{itemize}
+
+%==============================================================================
+\part{Part III: Services}
+%==============================================================================
+
+\section{Education}
+
+\subsection{Early Childhood}
+\begin{itemize}
+    \item Daycare, \textit{bal bikas} centers
+    \item ECD, which means Early Childhood Development
+    \item Mothers' groups, community-run
+\end{itemize}
+
+\subsection{School}
+\begin{itemize}
+    \item Primary levels 1 through 5, secondary levels 6 through 10, and higher secondary levels 11 through 12
+    \item Buildings, classrooms, toilets, drinking water
+    \item Teacher availability, training, housing
+    \item Multi-grade teaching in remote areas
+    \item Textbooks, school supplies, uniforms
+    \item Mid-day meal
+    \item Girls' education, menstrual hygiene
+    \item School management committee
+\end{itemize}
+
+\subsection{Higher \& Vocational}
+\begin{itemize}
+    \item Colleges, universities
+    \item Vocational: carpentry, tailoring, agriculture, plumbing, electrician
+    \item Distance learning through internet access
+    \item Scholarships, hostel
+\end{itemize}
+
+\subsection{Adult \& Non-Formal}
+\begin{itemize}
+    \item Literacy classes
+    \item Farmer field schools
+    \item Women's groups, cooperatives
+\end{itemize}
+
+\subsection{Knowledge \& Information}
+\begin{itemize}
+    \item Library, reading materials
+    \item Bulletin boards, announcements
+\end{itemize}
+
+%==============================================================================
+\section{Healthcare}
+%==============================================================================
+
+\subsection{Primary}
+\begin{itemize}
+    \item Health posts, sub-health posts
+    \item FCHV, which refers to Female Community Health Volunteers
+    \item Basic medicines, first aid
+    \item Vaccination
+\end{itemize}
+
+\subsection{Hospital \& Referral}
+\begin{itemize}
+    \item District, zonal, regional hospitals
+    \item Kathmandu for specialized care
+    \item Ambulance, doko, stretcher, helicopter
+    \item Lab, X-ray, surgery
+\end{itemize}
+
+\subsection{Maternal \& Child}
+\begin{itemize}
+    \item Antenatal care and delivery, whether at home or in a facility
+    \item Birthing centers
+    \item Nutrition, immunization
+\end{itemize}
+
+\subsection{Specialized}
+\begin{itemize}
+    \item Dental and eye care, which is often camp-based
+    \item Mental health, which remains underserved
+    \item Disability, rehabilitation
+    \item Elderly, palliative care
+\end{itemize}
+
+\subsection{Traditional \& Alternative}
+\begin{itemize}
+    \item \textit{Dhami/jhankri}, Ayurveda
+    \item Herbal medicine
+\end{itemize}
+
+\subsection{Pharmacy \& Drugs}
+\begin{itemize}
+    \item Drug availability, quality
+    \item Pharmacy, health post stock
+\end{itemize}
+
+%==============================================================================
+\part{Part IV: Governance \& Economy}
+%==============================================================================
+
+\section{Administration \& Government}
+
+\subsection{Offices}
+\begin{itemize}
+    \item Village or municipal office, described locally as \textit{gaunpalika} or \textit{nagarpalika}
+    \item Ward office, described locally as the \textit{ward karyalaya}
+    \item Ward chairperson, staff
+    \item District office access
+\end{itemize}
+
+\subsection{Documentation}
+\begin{itemize}
+    \item Citizenship, described locally as \textit{nagarikta}
+    \item Birth, death, marriage registration
+    \item Land ownership through the \textit{lalpurja} and related registration
+    \item Tax payment
+    \item PAN, business registration
+    \item Passport, visa
+\end{itemize}
+
+\subsection{Justice \& Security}
+\begin{itemize}
+    \item Police post
+    \item Court access
+    \item Mediation, dispute resolution
+    \item Domestic violence, child protection
+\end{itemize}
+
+\subsection{Political \& Civic}
+\begin{itemize}
+    \item Election booths, voter registration
+    \item Public hearings, participation
+    \item Citizen assembly, planning
+\end{itemize}
+
+\subsection{Programs \& Services}
+\begin{itemize}
+    \item Census, surveys
+    \item Disaster relief
+    \item Employment programs
+    \item Subsidies: fertilizer, seeds, elderly, disabled, single women
+    \item Food security programs
+\end{itemize}
+
+\section{Commerce, Finance \& Markets}
+
+\subsection{Markets}
+\begin{itemize}
+    \item Local shops, \textit{haat bazaar}
+    \item Wholesale, retail
+    \item Weekly, seasonal markets
+\end{itemize}
+
+\subsection{Finance}
+\begin{itemize}
+    \item Banks, branches, mobile banking
+    \item Cooperatives, savings groups
+    \item Microfinance
+    \item Credit, loans
+    \item Remittance transfer
+\end{itemize}
+
+\subsection{Insurance}
+\begin{itemize}
+    \item Life, health, property
+    \item Crop, livestock (emerging)
+\end{itemize}
+
+\subsection{Cooperatives}
+\begin{itemize}
+    \item Agricultural: input supply, marketing
+    \item Consumer
+    \item Credit
+\end{itemize}
+
+%==============================================================================
+\part{Part V: Environment, Conservation \& Sanitation}
+%==============================================================================
+
+\section{Environment \& Natural Resources}
+\begin{itemize}
+    \item Forests: community, government; fuel, timber
+    \item Grazing land
+    \item Soil conservation, landslide prevention
+    \item Biodiversity, wildlife
+    \item Climate adaptation
+    \item Seasonal calendar: monsoon, drought, cold
+\end{itemize}
+
+\section{Resource Conservation}
+Conserving food, energy, water, and other resources reduces waste, extends availability, and builds resilience---especially where supply is limited or seasonal.
+
+\subsection{Food Conservation}
+\begin{itemize}
+    \item \textbf{Cold storage:} Community cold store (electricity or solar-powered) for vegetables, fruits, dairy, meat---extends shelf life, reduces post-harvest loss (20--50\% for horticulture without it; see References), enables off-season supply
+    \item \textbf{Evaporative cooling:} \textit{Pot-in-pot}, sand storage---low-tech cooling without electricity
+    \item \textbf{Drying:} Sun-drying (\textit{sukeko}), solar dryer---grains, vegetables, fruits, fish, meat (\textit{sukuti}); reduces moisture, prevents spoilage
+    \item \textbf{Pickling \& fermentation:} \textit{Achar}, \textit{gundruk}, \textit{sinki}, \textit{kinema}---preserves vegetables, extends use
+    \item \textbf{Smoking:} Meat, fish---traditional preservation
+    \item \textbf{Salt curing:} Fish, meat
+    \item \textbf{Grain storage:} \textit{Bharako} (elevated, rodent-proof), neem leaves, ash---protects from pests, moisture
+    \item \textbf{Seed storage:} Cool, dry, sealed---maintains viability
+    \item \textbf{Root cellar:} Underground or shaded---potato, onion, ginger
+    \item \textbf{Reducing waste:} Proper handling, timely harvest, first-in-first-out
+\end{itemize}
+
+\subsection{Energy Conservation}
+\begin{itemize}
+    \item \textbf{Cooking:} Improved cookstoves (less fuel), pressure cooker, lid on pot, batch cooking
+    \item \textbf{Lighting:} LED bulbs, solar lanterns---efficient use of limited power
+    \item \textbf{Insulation:} Houses---reduce heating/cooling need
+    \item \textbf{Appliance efficiency:} Energy-efficient fridge, fan, pump---where electricity exists
+    \item \textbf{Peak avoidance:} Use mills, pumps during off-peak---if grid with load management
+    \item \textbf{Biomass:} Sustainable harvest, replanting---don't deplete forest
+    \item \textbf{Waste heat:} Biogas slurry for fertilizer; improved chulo heat for water
+\end{itemize}
+
+\subsection{Water Conservation}
+\begin{itemize}
+    \item \textbf{Rainwater harvesting:} Rooftop, tanks---capture monsoon
+    \item \textbf{Greywater reuse:} Washing water for garden, livestock
+    \item \textbf{Irrigation:} Drip, sprinkler---reduce loss; canal lining
+    \item \textbf{Leak repair:} Pipes, taps---prevent waste
+    \item \textbf{Spring protection:} Source conservation, recharge
+    \item \textbf{Storage:} Tanks, ponds---for dry season
+\end{itemize}
+
+\subsection{Material \& Other Resource Conservation}
+\begin{itemize}
+    \item \textbf{Reuse:} Containers, bags, tools---repair before replace
+    \item \textbf{Recycling:} Metal, plastic---where collection exists; composting organic
+    \item \textbf{Timber:} Sustainable harvest, efficient use, alternative (bamboo)
+    \item \textbf{Soil:} Compost, mulch, terrace---conserve fertility
+    \item \textbf{Medicines:} Proper storage, expiry awareness---avoid waste
+    \item \textbf{Fuel:} Efficient stoves, no idle burning
+\end{itemize}
+
+\subsection{Community-Level Conservation}
+\begin{itemize}
+    \item \textbf{Grain bank:} Collective storage, buffer for lean season
+    \item \textbf{Seed bank:} Preserve local varieties, share
+    \item \textbf{Water user group:} Fair allocation, maintenance
+    \item \textbf{Forest user group:} Regulated harvest, regeneration
+\end{itemize}
+
+\section{Sanitation \& Waste}
+\begin{itemize}
+    \item Toilets: pit, pour-flush, septic; open defecation
+    \item Waste: composting, burning, dumping
+    \item Drainage, flooding
+    \item Solid waste management (rare)
+\end{itemize}
+
+%==============================================================================
+\part{Part VI: Social \& Livelihood}
+%==============================================================================
+
+\section{Social, Cultural \& Religious}
+
+\begin{itemize}
+    \item Temples, \textit{gumbas}, mosques, churches
+    \item Community halls (\textit{samaj ghar})
+    \item Festivals, \textit{jatras}, ceremonies
+    \item Cemeteries, cremation grounds
+    \item Sports: football, volleyball, cricket, \textit{dandi biyo}
+    \item Youth clubs, women's groups
+    \item Music, dance, theater
+    \item Cinema (where available)
+\end{itemize}
+
+%==============================================================================
+\section{Industry, Crafts \& Livelihood}
+%==============================================================================
+
+\subsection{Cottage \& Handicraft}
+\begin{itemize}
+    \item Weaving, knitting
+    \item Pottery, metalwork
+    \item Bamboo, cane work
+    \item Handicraft for market
+\end{itemize}
+
+\subsection{Processing \& Manufacturing}
+\begin{itemize}
+    \item Rice mills, oil mills
+    \item Sawmills, brick kilns
+    \item Cheese, ghee, jam
+    \item Small-scale manufacturing
+\end{itemize}
+
+\subsection{Livelihood}
+\begin{itemize}
+    \item Agriculture, livestock
+    \item Wage labor, seasonal migration
+    \item Remittance (major)
+    \item Business, shopkeeping
+    \item Government, NGO employment
+    \item Tourism: homestay, trekking, guide
+\end{itemize}
+
+\section{Vulnerable Groups \& Social Protection}
+\begin{itemize}
+    \item Elderly care, pension
+    \item Orphan, child protection
+    \item Disabled support
+    \item Widows, single women
+    \item Dalit, marginalized
+    \item Indigenous, ethnic
+    \item Refugees (if applicable)
+\end{itemize}
+
+\section{Technology \& Repair}
+\begin{itemize}
+    \item Mobile repair, battery charging
+    \item Solar installation, repair
+    \item Agricultural machinery repair
+    \item Bicycle, motorcycle repair
+\end{itemize}
+
+%==============================================================================
+\part{Part VII: Infrastructure, Security \& Governance}
+%==============================================================================
+
+\section{Public Infrastructure}
+\begin{itemize}
+    \item Roads, bridges
+    \item Street lighting
+    \item Public spaces, playgrounds
+    \item Warehouses, storage
+    \item Parking, bus stops
+\end{itemize}
+
+\section{Security \& Emergency}
+
+\begin{itemize}
+    \item Natural disasters: earthquake, landslide, flood
+    \item Early warning, evacuation
+    \item Fire: limited services; community response
+    \item Conflict, dispute
+    \item Wild animals, snakes
+    \item Search \& rescue
+    \item Relief distribution
+\end{itemize}
+
+\section{Legal \& Rights}
+
+\begin{itemize}
+    \item Marriage, divorce
+    \item Inheritance, property
+    \item Labor rights
+    \item Child rights
+    \item Women's rights
+    \item Land rights, tenancy
+\end{itemize}
+
+\section{Identity \& Belonging}
+
+\begin{itemize}
+    \item Caste, ethnicity
+    \item Language, mother tongue
+    \item Religion
+    \item Voter ID
+    \item Community membership
+\end{itemize}
+
+%==============================================================================
+\part{Part VIII: 100\% Fully Independent Village}
+%==============================================================================
+
+\section{Complete Self-Sufficiency Checklist}
+
+What must a village have \textit{within its boundaries} to be 100\% fully independent and require no external inputs, 
+services, or markets for survival and functioning? This section catalogs every need for maximum self-reliance. Some items 
+are aspirational. Some have \textbf{hard dependencies} that are identified explicitly because 
+they may require minimal external trade or are nearly impossible to produce locally.
+
+\subsection{Water Independence}
+\begin{itemize}
+    \item Own water source: spring, well, river, or sufficient rainwater harvesting
+    \item Own gravity-fed or locally pumped distribution system
+    \item Own purification: boiling, sand filter, solar disinfection---no external chemicals
+    \item Own irrigation: \textit{kulo}, ponds, lift from local stream
+    \item Own maintenance capacity: masons, plumbers
+    \item Water user committee for governance
+\end{itemize}
+
+\subsection{Energy Independence}
+\begin{itemize}
+    \item \textbf{Cooking:} Firewood from a sustainably managed community forest, biogas from livestock, and agricultural residue. This excludes LPG and kerosene.
+    \item \textbf{Electricity:} Micro-hydro, pico-hydro, or solar---no grid dependency
+    \item \textbf{Mechanical:} Water mills (\textit{ghatta}), animal power, human power---or electric mills from local generation
+    \item \textbf{Lighting:} Solar, fire, and oil from local seeds such as mustard
+    \item \textbf{Hard dependency:} Solar panels, batteries, micro-hydro turbines---typically imported; for true independence would need local manufacture or long-life equipment
+\end{itemize}
+
+\subsection{Food Independence}
+\begin{itemize}
+    \item \textbf{Seeds:} Own seed saving, community seed bank---no hybrid dependency
+    \item \textbf{Fertilizer:} Compost, manure, green manure, ash---no chemical fertilizer
+    \item \textbf{Pesticides:} Neem, local botanicals, cultural methods---no external chemicals
+    \item \textbf{Crops:} Full diversity: staples (rice/maize/millet), pulses, vegetables, fruits, spices---sufficient for year-round diet
+    \item \textbf{Livestock:} Buffalo/cows (milk, manure, draft), goats, chickens, pigs---for protein, eggs, manure
+    \item \textbf{Storage:} \textit{Bharako}, traditional methods---no cold chain
+    \item \textbf{Processing:} Own rice mill, oil press, flour mill---powered locally
+    \item \textbf{Preservation:} Drying, pickling, smoking, fermentation
+    \item \textbf{Hard dependency:} Salt unless there is a local salt source in the Himalayan region. Iodized salt is important for health.
+\end{itemize}
+
+\subsection{Shelter Independence}
+\begin{itemize}
+    \item Own building materials: stone, mud, wood, bamboo, thatch, slate
+    \item Own masons, carpenters, thatchers
+    \item Own repair and construction capacity
+    \item Earthquake-resistant techniques based on local knowledge
+\end{itemize}
+
+\subsection{Clothing \& Textile Independence}
+\begin{itemize}
+    \item Own fiber from cotton, wool, hemp, nettle, and silk where sericulture is possible
+    \item Own spinning, weaving
+    \item Own tailoring, repair
+    \item Own dye: natural dyes from plants, minerals
+    \item Own footwear from leather where livestock is available. Rubber soles remain a hard dependency.
+\end{itemize}
+
+\subsection{Transport Independence (Internal)}
+\begin{itemize}
+    \item Foot trails and bridges built locally
+    \item Pack animals: mules, horses, yaks---bred and maintained locally
+    \item Porters using human labor
+    \item No need for motor vehicles if no external travel
+    \item Boats/rafts if river within village
+\end{itemize}
+
+\subsection{Education Independence}
+\begin{itemize}
+    \item Own primary school with teachers from the village who are trained or apprenticed
+    \item Own secondary school when the village has sufficient population to justify it
+    \item Own vocational training through apprenticeship within the village
+    \item Own library and books. Printed books are a hard dependency unless the village relies on oral tradition or handwritten materials.
+    \item Curriculum: state-approved or community-defined
+    \item Own school management, no external funding
+\end{itemize}
+
+\subsection{Healthcare Independence}
+\begin{itemize}
+    \item Own health worker such as a trained FCHV, midwife, or community health worker
+    \item Own pharmacy with herbal medicine, Ayurveda, and basic allopathic supplies. Stocked allopathic medicine remains a hard dependency.
+    \item Own birthing capacity: skilled birth attendant
+    \item Own capacity for: wounds, fractures, common illnesses, dental extraction
+    \item Own mental health support through community systems and traditional healers such as \textit{dhami/jhankri}
+    \item Own vaccination: cold chain impossible without electricity; or accept disease risk
+    \item \textbf{Hard dependency:} Antibiotics, vaccines, surgical equipment, complex diagnostics---cannot be 
+    produced locally; 100\% independence means accepting limits or minimal strategic stockpile from one-time trade
+\end{itemize}
+
+\subsection{Governance \& Administration Independence}
+\begin{itemize}
+    \item Own village council, ward committee---elected or customary
+    \item Own dispute resolution through mediation and \textit{panchayat}-style practices
+    \item Own record-keeping: births, deaths, land---written or oral
+    \item Own enforcement: community norms, local guards
+    \item \textbf{State interface:} Citizenship, national ID, and land registration remain minimal. The village can 
+    maintain internal records. Full independence implies a de facto autonomous unit similar to the historical \textit{rajya} or \textit{thum}.
+\end{itemize}
+
+\subsection{Justice \& Security Independence}
+\begin{itemize}
+    \item Own dispute resolution for civil, family, property
+    \item Own security: no external police; community vigilance
+    \item Own disaster response: search, rescue, relief from local stocks
+    \item Own fire response: bucket brigades, community
+\end{itemize}
+
+\subsection{Communication Independence}
+\begin{itemize}
+    \item Internal: word of mouth, village crier, notice boards
+    \item Own postal runner to neighboring villages if any exchange is needed
+    \item Own radio transmitter if electricity and equipment are available. The equipment remains a hard dependency.
+    \item No mobile or internet, unless the village can maintain its own very advanced community network
+\end{itemize}
+
+\subsection{Commerce \& Finance Independence}
+\begin{itemize}
+    \item Barter and labor exchange through \textit{parma}
+    \item Own grain bank, seed bank
+    \item Own savings group, rotating fund
+    \item No external currency dependency for internal transactions
+    \item No bank, no remittance---economy is closed
+\end{itemize}
+
+\subsection{Sanitation \& Waste Independence}
+\begin{itemize}
+    \item Own toilets: pit, compost---no external septic services
+    \item Own waste: composting, reuse, minimal dumping
+    \item Own drainage: constructed and maintained locally
+\end{itemize}
+
+\subsection{Industry, Craft \& Repair Independence}
+\begin{itemize}
+    \item \textbf{Blacksmith:} Tools, implements, repair---ore (hard: need local iron or recycling)
+    \item \textbf{Carpenter:} Furniture, construction, repair
+    \item \textbf{Potter:} Utensils, storage
+    \item \textbf{Weaver, tailor:} As above
+    \item \textbf{Miller:} Rice, flour, oil
+    \item \textbf{Bicycle/motorcycle repair:} Only if vehicles used; parts (hard dependency)
+    \item \textbf{Solar/electrical repair:} If solar used; components (hard dependency)
+\end{itemize}
+
+\subsection{Raw Materials \& Hard Dependencies}
+\begin{itemize}
+    \item \textbf{Salt:} Himalayan rock salt in some areas; otherwise trade
+    \item \textbf{Iron/steel:} Mining rare; recycling from scrap; otherwise trade
+    \item \textbf{Soap:} Can make from ash + local oil
+    \item \textbf{Paper:} Can make from lokta, recycled; or palm leaf, bark
+    \item \textbf{Glass:} Cannot produce locally; use oiled paper, open windows
+    \item \textbf{Rubber, plastic:} Cannot produce; minimize use
+    \item \textbf{Medicines:} Herbal for most; critical allopathic---strategic reserve or accept risk
+\end{itemize}
+
+\subsection{Population \& Demographics}
+\begin{itemize}
+    \item Sufficient population to fill all roles: farmers, blacksmith, carpenter, teacher, health worker, etc.
+    \item Marriage pool: internal or arranged with neighboring villages (reduces strict independence)
+    \item Birth rate to sustain population
+    \item Care for elderly, disabled, orphans---within community
+\end{itemize}
+
+\subsection{Social, Cultural \& Religious}
+\begin{itemize}
+    \item Own temples, \textit{gumbas}, places of worship
+    \item Own community hall
+    \item Own festivals, rituals, ceremonies
+    \item Own entertainment: music, dance, storytelling
+    \item Own cremation/burial grounds
+\end{itemize}
+
+\subsection{Environment \& Sustainability}
+\begin{itemize}
+    \item Community forest: sustainably managed for fuel, timber
+    \item Grazing land for livestock
+    \item Soil conservation, terrace maintenance
+    \item No over-extraction: water, forest, soil
+\end{itemize}
+
+\subsection{Time, Calendar \& Measurement}
+\begin{itemize}
+    \item \textbf{Timekeeping:} Sundial, water clock, stars, rooster---for work rhythm
+    \item \textbf{Calendar:} Lunar (\textit{tithi}), solar---for planting, festivals, rituals
+    \item \textbf{Agricultural calendar:} Who knows when to plant? Weather signs, traditional knowledge
+    \item \textbf{Measurement:} \textit{Pathi}, \textit{mana}, \textit{dharni} for grain; \textit{haat}, \textit{kosh} for length---standardization within village
+    \item \textbf{Value:} How is labor valued in \textit{parma}? How much grain for a day's work? Custom, negotiation
+\end{itemize}
+
+\subsection{Surplus, Buffer \& Risk}
+\begin{itemize}
+    \item \textbf{Famine reserve:} How many months of grain? One bad year? Two? Strategic storage
+    \item \textbf{Winter buffer:} High mountains---6+ months snow; fuel, food, fodder stored
+    \item \textbf{Disaster stock:} Earthquake, flood---immediate relief from local stores
+    \item \textbf{Crop failure:} Hail, drought, pest---diversity, fallback crops
+    \item \textbf{Livestock epidemic:} Quarantine, culling, herbal treatment---no vet
+\end{itemize}
+
+\subsection{Geographic \& Resource Reality}
+\begin{itemize}
+    \item \textbf{All within boundary:} Arable land, forest, water source, pasture, settlement---must all exist within village territory
+    \item \textbf{Altitude:} Hill villages often need land at multiple elevations (rice low, potato high); scattered plots
+    \item \textbf{Transhumance:} Seasonal movement of livestock---grazing rights
+    \item \textbf{Water source:} Spring, river---must be within or legally secured; upstream villages can cut supply
+    \item \textbf{Quarries:} Stone, clay, lime---local deposits or trade
+\end{itemize}
+
+\subsection{Skill Redundancy \& Succession}
+\begin{itemize}
+    \item \textbf{No single point of failure:} If blacksmith dies, who replaces? Multiple apprentices
+    \item \textbf{Knowledge transfer:} Oral, written, apprenticeship---before elder dies
+    \item \textbf{Leadership succession:} How is next leader chosen? Hereditary, election, rotation
+    \item \textbf{Chicken-egg:} Blacksmith needs anvil; potter needs wheel---initial tools from somewhere; recycling, inheritance
+\end{itemize}
+
+\subsection{Death, Ritual \& Continuity}
+\begin{itemize}
+    \item \textbf{Cremation/burial:} Wood for pyre, land for burial---who provides?
+    \item \textbf{Ritual:} Who performs? Priest, lama---full-time or part-time; how compensated?
+    \item \textbf{Inheritance:} Land, house, tools---rules for division; fragmentation over generations
+    \item \textbf{Orphan:} Who raises? Kinship, adoption
+    \item \textbf{Widow:} Property rights, remarriage---custom
+\end{itemize}
+
+\subsection{Conflict, Crime \& Punishment}
+\begin{itemize}
+    \item \textbf{Dispute:} Civil, family, property---mediation; what if parties refuse?
+    \item \textbf{Crime:} Murder, theft, rape---what punishment? Fine, exile, corporal? No jail without guards, food
+    \item \textbf{Factionalism:} Family feud, caste conflict---can split village
+    \item \textbf{Boundary dispute:} With neighboring village---grazing, forest, water; no external arbiter
+\end{itemize}
+
+\subsection{Defense \& External Threat}
+\begin{itemize}
+    \item \textbf{Bandits, raiders:} Historical reality---walls, vigilance, weapons?
+    \item \textbf{Wild animals:} Leopard, bear, wild boar---crops, livestock, humans; how to deter?
+    \item \textbf{Neighboring village:} Conflict over resources---defense or negotiation
+\end{itemize}
+
+\subsection{Healthcare: The Limits}
+\begin{itemize}
+    \item \textbf{Snakebite:} Antivenom---cannot produce; herbal alternatives limited
+    \item \textbf{Complicated childbirth:} Breech, hemorrhage---traditional skills can save some; many die
+    \item \textbf{Appendicitis, trauma:} Surgery---no surgeon; accept death
+    \item \textbf{Cataract, severe dental:} Blindness, chronic pain---camp-based care requires external visit
+    \item \textbf{Mental illness:} Severe---restraint, care; no psychiatric drugs
+    \item \textbf{Contagious epidemic:} Quarantine, isolation---who enforces?
+\end{itemize}
+
+\subsection{Population \& Demographics: The Numbers}
+\begin{itemize}
+    \item \textbf{Minimum viable:} Estimate 200--500+ to fill all roles with redundancy
+    \item \textbf{Genetic diversity:} Inbreeding if too closed; marriage with neighbors reduces independence
+    \item \textbf{Birth/death balance:} Sustain population; family planning---natural methods
+    \item \textbf{Disability, chronic illness:} Care within family/community---productivity loss
+\end{itemize}
+
+\subsection{Social Obligation \& Reciprocity}
+\begin{itemize}
+    \item \textbf{Hospitality:} Cultural duty to feed guests---uses surplus
+    \item \textbf{Festival feasts:} Who provides? Rotating, pooling
+    \item \textbf{Gift economy:} Marriage, death, festivals---reciprocity, social capital
+    \item \textbf{Common labor:} \textit{Shramdan}---trail, canal, temple---who organizes? Who participates?
+\end{itemize}
+
+\subsection{Division of Labor: Caste, Gender}
+\begin{itemize}
+    \item \textbf{Traditional:} Blacksmith (\textit{kami}), tailor (\textit{damai}), etc.---caste-based; does independence require breaking or retaining?
+    \item \textbf{Gender:} Who fetches water? Who plows? Who weaves? Who cares for children?
+    \item \textbf{Child labor:} At what age do children work? School vs. field
+\end{itemize}
+
+\subsection{Childcare, Elderly \& Disability}
+\begin{itemize}
+    \item \textbf{Childcare:} When parents in field---grandmother, older sibling, communal
+    \item \textbf{Elderly:} Bedridden---who feeds, bathes? Family, rotation
+    \item \textbf{Disabled:} Born or acquired---who supports? No pension; family, charity
+\end{itemize}
+
+\subsection{Storage \& Preservation}
+\begin{itemize}
+    \item \textbf{Grain:} Rats, weevils---how to protect? \textit{Bharako} design, neem leaves, smoke---studies report 5--20\% cereal storage loss in 
+    Nepal; hermetic storage adoption remains low (see References)
+    \item \textbf{Seed viability:} Saving year to year---maintain purity, germination
+\end{itemize}
+
+\subsection{Pollution \& Waste}
+\begin{itemize}
+    \item \textbf{Blacksmith:} Smoke, slag---where?
+    \item \textbf{Tannery:} If leather---waste, smell
+    \item \textbf{Latrine:} Pit filling---where next? Rotation
+\end{itemize}
+
+\subsection{Beauty, Meaning \& Spirit}
+\begin{itemize}
+    \item \textbf{Art:} Mural, carving, craft---for meaning, not just function
+    \item \textbf{Entertainment:} Music, dance, storytelling---who performs? When?
+    \item \textbf{Instruments:} Drum, flute---who makes? Who plays?
+    \item \textbf{Why:} Purpose beyond survival---ritual, festival, belonging
+\end{itemize}
+
+\subsection{The Hard Truths}
+\begin{enumerate}
+    \item \textbf{100\% is impossible} without accepting death, disability, and suffering that modern medicine could prevent.
+    \item \textbf{Geographic luck} matters: a village without local iron, salt, or sufficient water cannot be independent.
+    \item \textbf{Population} must be large enough for all skills plus redundancy---small villages cannot.
+    \item \textbf{Marriage} with neighbors breaks strict independence; inbreeding breaks health.
+    \item \textbf{Surplus} is essential---for bad years, festivals, guests---but surplus requires good land, labor, and luck.
+    \item \textbf{Conflict} without external arbiter can destroy a village from within.
+    \item \textbf{Independence} was historically possible when villages were \textit{rajya}, \textit{thum}---semi-autonomous. 
+    The modern state, market, and aspiration have made it rare.
+\end{enumerate}
+
+\subsection{Summary: Independence vs.\ Reality}
+A 100\% fully independent village is theoretically possible only under four conditions. It must produce or harvest everything from 
+local resources. It must have sufficient population and skill diversity. It must either accept \textbf{hard dependencies} 
+for a few items such as salt, iron, and critical medicines through minimal trade, or accept higher risk from disease and 
+crop failure without an external buffer. In practice, \textit{maximum self-reliance} is the achievable goal because it 
+minimizes external dependency while maintaining dignity and resilience.
+
+%==============================================================================
+\section{Summary: The Continuum}
+%==============================================================================
+
+\begin{description}
+    \item[Fully Remote] Local water, firewood, subsistence agriculture, foot/mule transport, health posts, primary schools, 
+    ward office, radio, occasional mobile. No grid, no roads, no internet.
+    \item[Partially Connected] Micro-hydro or solar, trail/ropeway, secondary school access, district hospital referral, weekly market, patchy mobile.
+    \item[Fully Connected] Roads, grid, internet, banks, higher education, better healthcare, LPG, vehicles, e-services.
+    \item[100\% Independent] Maximum self-reliance: local water, fuel, food, shelter, education, healthcare, 
+    governance, industry---minimal external trade for salt, iron, critical medicines.
+\end{description}
+
+Understanding this continuum helps in planning interventions, policy, and development projects tailored to each village's reality.
+
+%==============================================================================
+\part{Part IX: Village Needs Tree --- Technical Specification}
+%==============================================================================
+
+% Consolidates all former .md documentation (README, TAXONOMY, CLASSIFICATION_GUIDE, META_SCHEMA)
+% into this single document. The .md files have been removed.
+
+\section{Overview}
+
+The Village Needs Tree is a YAML tree with metadata. \textbf{No GUI.} The metadata encodes all dependencies between nodes (families/leaves and their ancestors).
+
+\subsection{Files}
+
+\begin{tabularx}{\linewidth}{>{\ttfamily\raggedright\arraybackslash}p{0.28\linewidth} >{\raggedright\arraybackslash}X}
+\hline
+\textbf{File} & \textbf{Purpose} \\
+\hline
+\path{village_governance_tree.yaml} & Canonical governance model authoring file in normalized node-registry form, with explicit parent/child links and per-node dependency metadata. \\
+\path{village_needs_catalog.yaml} & Canonical village needs catalog (id, scope, category, barriers, feasibility, evidence). \\
+\path{budget_scenarios.yaml} & Named budget scenarios for intervention planning. \\
+\path{dist/village_needs_catalog.json} & Generated JSON export of the canonical needs model. \\
+\path{dist/village_governance_public_data.json} & Full public data bundle with model and analysis outputs. \\
+\path{dist/village_governance_dashboard_data.json} & Compact frontend-ready bundle for the public dashboard. \\
+\path{village_needs_schema.json} & JSON schema for the village needs model. \\
+\path{validate_village_model.py} & Validates \path{village_needs_catalog.yaml} and tree semantics. \\
+\path{check_needs_coverage.py} & Verifies all needs are covered in the tree. \\
+\path{extract_dependency_edges.py} & Extracts dependency graph as edges. \\
+\path{generate_governance_diagrams.py} & Generates ASCII, Mermaid, and Graphviz diagrams. \\
+\path{analyze_dependency_routes.py} & Route-length analysis, self-sufficiency score, push-down opportunities, and budget scenarios. \\
+\path{export_public_data.py} & Generates public JSON bundles from canonical YAML. \\
+\texttt{public/} & Static public dashboard consuming generated frontend-ready JSON. \\
+\hline
+\end{tabularx}
+
+\subsection{Meta = Dependencies}
+
+Each node in the tree has a \texttt{meta} block:
+
+\begin{description}
+    \item[satisfies:] Needs met within this node (no external dependency).
+    \item[requires:] \texttt{\{node, need\}} --- this node depends on that node for that need. Creates dependency edges.
+    \item[provides:] Needs this node supplies to children/others.
+    \item[need\_deps:] Need-to-need dependencies within this node.
+\end{description}
+
+The \texttt{requires} field creates the dependency graph: household $\rightarrow$ ward (water), household $\rightarrow$ village (market, school).
+
+\subsection{Governance Node Model}
+
+\begin{verbatim}
+root_node: village
+nodes:
+    - id: village
+        type: V
+        parent_id: null
+        child_ids: [ward_1, ward_2]
+
+    - id: ward_1
+        type: W
+        parent_id: village
+        child_ids: [n1_1, n1_2]
+
+    - id: n1_1
+        type: N
+        parent_id: ward_1
+        child_ids: [h1_1_1, h1_1_2, h1_1_3]
+
+    - id: h1_1_1
+        type: H
+        parent_id: n1_1
+        child_ids: []
+\end{verbatim}
+
+Internally, the implementation now normalizes the governance model into a generic node registry rather than depending directly on a hardcoded nested YAML shape. That makes the runtime model more modular and less repetitive. The same representation can support the current minimal village, future additional layers, and real structural changes such as household split, household merge, neighbor-group reorganization, and ward boundary change.
+
+\textbf{Optional lineage support.} A node may include lineage metadata such as \texttt{split\_from}, \texttt{merged\_from}, or \texttt{merged\_into}. These fields are optional in the minimal prototype, but the framework now reserves space for them so real institutional change can be represented without changing the code architecture.
+
+\subsection{Completeness Verification}
+
+\begin{verbatim}
+python check_needs_coverage.py
+\end{verbatim}
+
+Verifies all 65 needs (minus external) are satisfied or required somewhere in the governance model.
+
+\subsection{Diagram Generation}
+
+\begin{verbatim}
+python generate_governance_diagrams.py
+\end{verbatim}
+
+Produces:
+\begin{itemize}
+    \item \path{village_governance_tree_ascii.txt} --- ASCII tree
+    \item \path{village_governance_tree_mermaid.mmd} --- Mermaid tree (view in VS Code, GitHub)
+    \item \path{village_dependency_routes_mermaid.mmd} --- Mermaid dependency graph
+    \item \path{village_governance_tree_graphviz.dot} --- Graphviz DOT
+    \item \path{village_governance_tree_graphviz.png} --- PNG (if \texttt{dot} installed)
+\end{itemize}
+
+\subsection{Extending the Governance Model}
+
+\begin{enumerate}
+    \item \textbf{Add nodes:} Extend \path{village_governance_tree.yaml} with new governance nodes and connect them through \texttt{parent\_id} and \texttt{child\_ids}.
+    \item \textbf{Add meta:} For each node, set satisfies/requires/provides.
+    \item \textbf{Record change history:} When a household splits or multiple households merge, preserve identity through optional lineage fields rather than deleting the historical relationship.
+    \item \textbf{Add needs:} Extend \texttt{village\_needs\_catalog.yaml}; reference in meta.
+\end{enumerate}
+
+%==============================================================================
+\section{Taxonomy and Classification System}
+%==============================================================================
+
+\subsection{Scope Levels (Production-Consumption Scale)}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.14\linewidth} >{\raggedright\arraybackslash}p{0.09\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.12\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth}}
+\hline
+\textbf{Level} & \textbf{Code} & \textbf{Definition} & \textbf{Size} & \textbf{Example} \\
+\hline
+Household & H & Single family unit. & 1 family & Own rice, own chulo, own toilet \\
+Neighbor & N & 2--5 adjacent households. & 2--5 families & Parma, borrowing tools, shared well \\
+Ward & W & Ward or neighborhood. & 10--50 families & Ward trail, ward water point, local mill \\
+Village & V & Entire village. & 100--500+ families & Haat bazaar, health post, school \\
+\hline
+\end{tabularx}
+
+\textbf{Rule:} A need is satisfied at level X if the production-consumption cycle is contained within that level.
+
+\subsection{Scope of a Need}
+
+Each need has:
+\begin{description}
+    \item[min\_scope:] Minimum level at which this need can be satisfied (H, N, W, or V).
+    \item[scope\_options:] Levels at which this need CAN appear (a need may be satisfiable at multiple levels).
+\end{description}
+
+\textbf{Examples:}
+\begin{itemize}
+    \item \textbf{Drinking water:} scope\_options = [H, N, W, V]. H: Own well, rainwater. N: Shared well with 2--3 neighbors. W: Ward tap. V: Village piped system.
+    \item \textbf{Haat bazaar:} scope\_options = [V] only (cannot exist at H, N, W).
+    \item \textbf{Own rice consumption:} scope\_options = [H] (shortest cycle).
+\end{itemize}
+
+\subsection{Cycle Length}
+
+\begin{tabular}{lll}
+\hline
+\textbf{Length} & \textbf{Code} & \textbf{Definition} \\
+\hline
+Short & S & Production $\rightarrow$ consumption within same unit; minimal intermediaries \\
+Medium & M & 2--3 steps; involves neighbors or ward \\
+Long & L & Many steps; involves village institutions, markets, money, storage \\
+\hline
+\end{tabular}
+
+\subsection{Need Attributes (Extensible Schema)}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}p{0.12\linewidth} >{\raggedright\arraybackslash}X}
+\hline
+\textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Description} \\
+\hline
+id & string & yes & Unique identifier (e.g., \texttt{water.drinking.spring}) \\
+name & string & yes & Human-readable name \\
+category & string & yes & water, energy, food, shelter, etc. \\
+subcategory & string & no & Finer grouping \\
+scope\_options & {[}H,N,W,V{]} & yes & Levels at which this need can be satisfied \\
+min\_scope & H$|$N$|$W$|$V & yes & Minimum scope (derived from scope\_options) \\
+cycle\_length & S$|$M$|$L & no & Production-consumption cycle length \\
+depends\_on & {[}id{]} & no & Other needs this one requires \\
+barriers & {[}barrier{]} & no & Why this need stays at higher scope than minimum (see below) \\
+feasibility & object & no & Cost, maintenance, difficulty, and next-scope planning data \\
+confidence & enum & no & Confidence in the claim: low $|$ medium $|$ high $|$ provisional \\
+evidence & {[}object{]} & no & Citations, observations, or notes supporting the claim \\
+notes & string & no & Context, Nepal-specific \\
+source\_section & string & no & Reference to section in this document \\
+\hline
+\end{tabularx}
+
+\subsubsection{Barrier Objects}
+
+Each barrier documents \textit{why} a need is not yet at its lowest possible scope. This is the key to extensibility: the 
+system separates \textbf{what is physically possible} (\texttt{scope\_options}) from \textbf{what currently prevents it} (\texttt{barriers}).
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.16\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.12\linewidth} >{\raggedright\arraybackslash}X}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Required} & \textbf{Description} \\
+\hline
+type & string & yes & cost $|$ expertise $|$ population $|$ infrastructure $|$ geography $|$ regulation \\
+description & string & yes & Why this barrier exists \\
+holds\_at & H$|$N$|$W$|$V & no & Scope below which this barrier prevents push-down \\
+removable & boolean & no & Can this barrier be removed with investment? \\
+\hline
+\end{tabularx}
+
+\subsubsection{Feasibility Objects}
+
+Barriers explain \textit{why} a need remains above its minimum possible scope. Feasibility explains \textit{how hard it would be} to push it down in practice.
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\raggedright\arraybackslash}p{0.1\linewidth} >{\raggedright\arraybackslash}p{0.08\linewidth} >{\raggedright\arraybackslash}X}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Req.} & \textbf{Description} \\
+\hline
+target\_scope & H$|$N$|$W$|$V & no & Recommended next target scope \\
+investment\_cost\_band & 1--5 & no & 1=low capital, 5=very high capital \\
+maintenance\_cost\_band & 1--5 & no & 1=low maintenance, 5=very high maintenance \\
+\path|implementation_difficulty_band| & 1--5 & no & 1=easy, 5=very difficult \\
+time\_horizon & enum & no & immediate $|$ near\_term $|$ medium\_term $|$ long\_term \\
+notes & string & no & Planning assumptions and local context \\
+\hline
+\end{tabularx}
+
+These are ordinal planning bands, not exact price claims. Their role is to make interventions comparable before a detailed budget exists.
+
+\subsubsection{Evidence and Confidence}
+
+The model now distinguishes between \textit{what is claimed} and \textit{how strongly that claim is supported}.
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.12\linewidth} >{\raggedright\arraybackslash}X}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Required} & \textbf{Description} \\
+\hline
+confidence & enum & no & low $|$ medium $|$ high $|$ provisional confidence in the modeled claim \\
+evidence.kind & string & no & citation $|$ observation $|$ planning\_judgment \\
+evidence.citation & string & no & Reference title or source label \\
+evidence.url & string & no & Link to source when available \\
+evidence.notes & string & no & Short statement of what the evidence supports \\
+\hline
+\end{tabularx}
+
+This makes the model auditable. A public user can now ask not only ``why is this need placed here?'' but also ``how certain is that claim, and what supports it?''
+
+\textbf{Barrier types:}
+\begin{description}
+    \item[cost:] Equipment, materials, or ongoing expense too high for current wealth. \textit{Removable:} when resources increase.
+    \item[expertise:] Skilled labor or training required but not available. \textit{Removable:} with education/vocational programs.
+    \item[population:] Need requires minimum number of people (e.g., school needs enough children). \textit{Typically structural.}
+    \item[infrastructure:] Depends on other infrastructure (electricity, roads) not yet present. \textit{Removable:} with investment.
+    \item[geography:] Physical resource is shared or location-specific (forest, spring). \textit{Often structural.}
+    \item[regulation:] Legal or regulatory requirement mandates collective ownership. \textit{Often structural.}
+\end{description}
+
+\textbf{Design principle:} When a removable barrier is overcome (e.g.\ the village becomes rich enough to buy each family a hand mill), the only change needed is:
+\begin{enumerate}
+    \item Move the need from the higher-scope node's \texttt{satisfies} to the lower-scope node's \texttt{satisfies} in \path{village_governance_tree.yaml}.
+    \item Update the household's \texttt{requires} to remove that dependency.
+    \item Run \texttt{python analyze\_dependency\_routes.py} to verify the score improved.
+\end{enumerate}
+
+No code changes. Only model edits.
+
+\subsection{Self-Sufficiency Analysis}
+
+The system provides four analysis modes via \texttt{analyze\_dependency\_routes.py}:
+
+\begin{description}
+    \item[Default report:] Route lengths, per-household scores, push-down opportunities, barriers, irreducible dependencies, and self-sufficiency score.
+    \item[\texttt{-{}-whatif <need> <scope>}:] Simulate pushing a need to a lower scope and compare scores. Shows current vs.\ projected score and lists barriers to overcome.
+    \item[\texttt{-{}-barriers}:] List all barriers with removable/structural classification. Removable barriers are the investment targets.
+    \item[\texttt{-{}-feasibility}:] Rank interventions by total route savings against investment, maintenance, and implementation difficulty bands.
+    \item[\texttt{-{}-budget <band>}:] Select the best intervention portfolio within a given investment budget band.
+    \item[\texttt{-{}-scenarios}:] Run named budget scenarios from \texttt{budget\_scenarios.yaml} and print their selected interventions.
+\end{description}
+
+Example: \texttt{python analyze\_dependency\_routes.py -{}-whatif food.processing.mill H} answers ``What if every household had its own mill?'' 
+and reports the score improvement and cost/infrastructure barriers to overcome.
+
+The feasibility ranking uses two derived indicators:
+\begin{itemize}
+    \item \textbf{ROI:} total hop savings divided by investment cost band.
+    \item \textbf{Priority:} total hop savings divided by the sum of investment, maintenance, and implementation difficulty bands.
+\end{itemize}
+
+This does not replace detailed budgeting. It creates a rigorous first-pass ranking of which interventions deserve deeper planning first.
+
+The current analysis implementation uses the actual containment hierarchy to measure governance-route length. That means the route engine no longer depends on a hardcoded assumption that the only valid path is H $\rightarrow$ N $\rightarrow$ W $\rightarrow$ V. As long as the taxonomy defines the layers and the governance model connects nodes consistently, the analysis remains valid.
+
+Named scenarios convert that ranking into concrete bundles such as bootstrap, practical, and transformation paths. This gives the 
+system a direct bridge from structural diagnosis to phased decision making.
+
+\subsection{Extensibility}
+
+\begin{itemize}
+    \item \textbf{Add new need:} Add entry to \texttt{village\_needs\_catalog.yaml}; assign id, scope\_options, category. Optionally add barriers, feasibility, confidence, and evidence.
+    \item \textbf{Add feasibility:} If a push-down is realistic, add a \texttt{feasibility} block with cost, maintenance, and difficulty bands.
+    \item \textbf{Add evidence:} Attach citation, local observation, or planning judgment to make the claim reviewable.
+    \item \textbf{Push a need down:} Edit \path{village_governance_tree.yaml} --- move need from higher node's satisfies to lower node's satisfies; update requires. Run analysis.
+    \item \textbf{Add new barrier type:} Add to \texttt{village\_needs\_schema.json} barrier type enum; add to relevant needs.
+    \item \textbf{Add new level:} Extend taxonomy scope levels with a new code and order; the traversal, validation, and analysis layers now derive hierarchy rules from taxonomy rather than from hardcoded loops.
+    \item \textbf{Add new attribute:} Add to schema; existing needs get null/default.
+    \item \textbf{Add new village:} New governance-model instance; same need set, different node population.
+    \item \textbf{Future wealth scenario:} Use \texttt{-{}-whatif} to preview; then edit YAML when ready. No code changes needed.
+\end{itemize}
+
+\subsection{Completeness Check Procedure}
+
+For each need in this document:
+\begin{enumerate}
+    \item Does it have an id?
+    \item Is scope\_options assigned?
+    \item Is category assigned?
+    \item Are dependencies (if any) listed?
+\end{enumerate}
+
+\subsection{Version}
+
+\begin{itemize}
+    \item Schema version: 1.0
+    \item Taxonomy version: 1.0
+\end{itemize}
+
+%==============================================================================
+\section{How to Classify a Need}
+%==============================================================================
+
+\subsection{Step 1: Identify the Need}
+
+From this document, extract the need. Give it a unique \texttt{id}:
+
+\begin{itemize}
+    \item Format: \texttt{category.subcategory.item}
+    \item Examples: \texttt{water.drinking.spring}, \texttt{food.market.haat}, \texttt{energy.cooking.biogas}
+\end{itemize}
+
+\subsection{Step 2: Assign scope\_options}
+
+\textbf{Question:} At which levels can this need be satisfied?
+
+\begin{tabular}{ll}
+\hline
+\textbf{If the need\ldots} & \textbf{scope\_options} \\
+\hline
+Can be done by 1 family alone & \texttt{["H"]} \\
+Requires 2--5 families (neighbors) & \texttt{["N"]} or \texttt{["H","N"]} if both possible \\
+Requires ward (10--50 families) & \texttt{["W"]} or include in array \\
+Requires village (100+) & \texttt{["V"]} or include in array \\
+\hline
+\end{tabular}
+
+\textbf{Examples:}
+\begin{itemize}
+    \item \textbf{Own rice consumption:} Family grows, family eats. $\rightarrow$ \texttt{["H"]}
+    \item \textbf{Drinking water:} Own well (H), shared well (N), ward tap (W), village pipe (V).
+    \item[] $\rightarrow$ \texttt{["H", "N", "W", "V"]}
+    \item \textbf{Haat bazaar:} Only exists at village scale. $\rightarrow$ \texttt{["V"]}
+    \item \textbf{Parma:} By definition needs 2+ families. $\rightarrow$ \texttt{["N"]}
+    \item \textbf{Health post:} Serves many. $\rightarrow$ \texttt{["W","V"]}
+\end{itemize}
+
+\subsection{Step 3: Assign cycle\_length}
+
+\begin{tabular}{ll}
+\hline
+\textbf{Length} & \textbf{When} \\
+\hline
+S (short) & Production $\rightarrow$ consumption within same unit; minimal steps \\
+M (medium) & 2--3 steps; involves neighbors or ward \\
+L (long) & Many steps; village institutions, markets, money, storage \\
+\hline
+\end{tabular}
+
+\subsection{Step 4: List depends\_on (if any)}
+
+If this need requires another need, add its id:
+
+\begin{itemize}
+    \item Cold storage depends on electricity $\rightarrow$ \texttt{"depends\_on": ["energy.electricity.solar"]}
+    \item Pump irrigation depends on pipes $\rightarrow$ \texttt{"depends\_on": ["water.irrigation.pipes"]}
+\end{itemize}
+
+\subsection{Step 5: Add to village\_needs\_catalog.yaml}
+
+\begin{verbatim}
+- id: category.subcategory.item
+    name: Human-readable name
+    category: water|energy|food|shelter|...
+    subcategory: optional
+    scope_options: [H, N, W, V]
+    cycle_length: S|M|L
+    depends_on: []
+    barriers: []
+    feasibility: {}
+    notes: Context if needed
+    source_section: Water.Drinking
+\end{verbatim}
+
+\subsection{Decision Tree: scope\_options}
+
+\begin{verbatim}
+Can 1 family do it alone?
+  YES --> Include "H"
+  NO  --> Don't include "H"
+
+Can 2-5 neighbors do it together?
+  YES --> Include "N"
+  NO  --> Don't include "N"
+
+Does it need ward-scale (10-50)?
+  YES --> Include "W"
+  NO  --> Don't include "W"
+
+Does it need village-scale (100+)?
+  YES --> Include "V"
+  NO  --> Don't include "V"
+\end{verbatim}
+
+\subsection{Ambiguous Cases}
+
+\begin{itemize}
+    \item \textbf{Mobile phone:} Handset = H; tower = V. Classify ``Mobile connectivity'' $\rightarrow$ V (infrastructure); ``Using mobile'' $\rightarrow$ H (consumption).
+    \item \textbf{Mill:} Hand mill = H; electric mill = W or V. Use scope\_options: \texttt{["H","N","W","V"]} with note.
+    \item \textbf{School:} Building = V; child attending = H (but depends on V). Classify ``School'' as V.
+\end{itemize}
+
+%==============================================================================
+\section{Metadata Schema for Tree Nodes}
+%==============================================================================
+
+The metadata on each node encodes \textbf{dependencies between nodes}. This is what creates the dependency graph---no separate GUI needed.
+
+\subsection{Core Meta Fields}
+
+\begin{tabular}{lll}
+\hline
+\textbf{Field} & \textbf{Type} & \textbf{Description} \\
+\hline
+\texttt{satisfies} & {[}need\_id{]} & Needs satisfied \textit{within} this node \\
+\texttt{requires} & {[}\{node, need\}{]} & Needs from \textit{other} nodes. Creates dependency edge. \\
+\texttt{provides} & {[}need\_id{]} & Needs this node \textit{supplies} to others \\
+\texttt{need\_deps} & {[}\{need, depends\_on\}{]} & Need-to-need dependencies within this node \\
+\hline
+\end{tabular}
+
+\subsection{Dependency Semantics}
+
+\begin{description}
+    \item[satisfies:] ``We do it ourselves.'' No external node needed.
+    \item[requires:] ``We get it from them.'' Example: \path|{node: "ward_1", need: "water.drinking.piped"}| = this node depends on ward\_1 for water.
+    \item[provides:] ``We supply this to others.'' Parent/ancestor provides to children.
+    \item[need\_deps:] ``Need A needs need B.'' Both at same node; internal dependency.
+\end{description}
+
+\subsection{Example: Household}
+
+\begin{verbatim}
+meta:
+  satisfies:
+    - food.staples.own      # own rice, own consumption
+    - energy.cooking.firewood
+    - shelter.toilet
+  requires:
+    - {node: ward_1, need: water.drinking.piped}
+    - {node: village, need: food.market.haat}
+    - {node: village, need: education.school}
+\end{verbatim}
+
+Interpretation: This household is self-sufficient for staples, cooking, toilet. It depends on ward\_1 for water, village for market and school.
+
+\subsection{Example: Ward}
+
+\begin{verbatim}
+meta:
+  provides:
+    - water.drinking.piped
+  requires:
+    - {node: village, need: water.drinking.committee}
+  satisfies:
+    - transport.trail   # ward maintains its trail
+\end{verbatim}
+
+\subsection{Extensibility}
+
+Add fields as needed:
+\begin{itemize}
+    \item \texttt{cycle\_length}: S$|$M$|$L for this node's aggregate cycle
+    \item \texttt{scope}: H$|$N$|$W$|$V
+    \item \texttt{notes}: Free text
+\end{itemize}
+
+%==============================================================================
+\section{Recommended Architecture for a Public System}
+%==============================================================================
+
+The current repository already has a strong domain idea, but its main weakness is that one conceptual system is spread across 
+several machine formats and utility scripts. For a \textbf{minimal but complete public governance system}, the design should 
+move toward \textbf{one canonical source of truth, many generated views}.
+
+\subsection{What Should Stay}
+
+\begin{itemize}
+    \item \textbf{This document:} the human-readable constitution, design philosophy, and formal explanation of the system.
+    \item \textbf{Machine-readable model:} the canonical governance data.
+    \item \textbf{Generated artifacts:} diagrams, reports, public summaries, and scenario outputs.
+\end{itemize}
+
+\subsection{What Should Be Reduced}
+
+The repository should avoid multiple hand-maintained representations of the same truth.
+
+\begin{itemize}
+    \item Do not hand-edit both YAML and JSON for the same fact.
+    \item Do not treat generated diagrams as authoritative data.
+    \item Do not encode policy logic separately in many scripts.
+\end{itemize}
+
+\subsection{Target Structure}
+
+The recommended target structure is:
+
+\begin{enumerate}
+    \item \textbf{Canonical model:} one source of truth for needs, barriers, deployment, and routing.
+    \item \textbf{Validation layer:} schema validation and semantic rules.
+    \item \textbf{Analysis layer:} route scoring, push-down analysis, scenarios, and cost tradeoffs.
+    \item \textbf{Presentation layer:} PDF, public website, interactive graph, searchable tables, and proposal forms.
+\end{enumerate}
+
+\subsection{Canonical Data Model}
+
+The cleanest long-term model separates four things:
+
+\begin{description}
+    \item[Need definition:] What the need is, its scope options, dependencies, and barriers.
+    \item[Deployment:] Where the need is actually satisfied today in a specific village.
+    \item[Scenario:] What would happen if a barrier were removed or a need were pushed down.
+    \item[Evidence:] Why the model makes that claim: references, cost assumptions, local observations.
+\end{description}
+
+This separation is important. A need may be \textit{possible} at H-scope, \textit{currently deployed} at V-scope, 
+and \textit{blocked} by cost. Those are different facts and should remain different fields.
+
+\subsection{Recommended Technology Direction}
+
+There are three reasonable maturity levels.
+
+\subsubsection{Level 1: Minimal Repository System}
+
+Use one canonical authoring file format and generate everything else.
+
+\begin{itemize}
+    \item Preferred authoring format: \textbf{YAML} for human editing.
+    \item Preferred validation/runtime layer: \textbf{Python} with schema validation and analysis.
+    \item Public outputs: PDF, JSON export, generated diagrams, CSV tables.
+\end{itemize}
+
+This is the best fit if the project remains primarily research/design oriented.
+
+\subsubsection{Level 2: Public Open Data System}
+
+Keep the canonical model in a repository, but generate a public site from it.
+
+\begin{itemize}
+    \item Static site generator: Astro or Next.js.
+    \item Graph visualization: Cytoscape.js or D3 instead of static Mermaid only.
+    \item Public data exports: JSON, CSV, and printable summaries.
+    \item Public modification method: proposal-based edits with review, not direct raw file editing.
+\end{itemize}
+
+This is the best fit if the public should be able to explore the model but not directly mutate the source of truth.
+
+\subsubsection{Level 3: Full Governance Platform}
+
+If many villages, planners, or agencies will collaborate, move from repo-centered editing to an application.
+
+\begin{itemize}
+    \item Backend: FastAPI, Django, or a typed TypeScript backend.
+    \item Database: PostgreSQL or SQLite first, Postgres when multi-user collaboration is needed.
+    \item Editing UI: forms for needs, barriers, village deployment, and scenarios.
+    \item Audit trail: every change recorded as proposal, approval, and rationale.
+\end{itemize}
+
+At this stage the repo becomes the export surface, not the primary editing surface.
+
+\subsection{Presentation to the Public}
+
+To make the system understandable to non-technical users, the public interface should not expose raw YAML/JSON first. It should expose questions and answers.
+
+\begin{enumerate}
+    \item What does a village need?
+    \item Which needs are local and which require higher coordination?
+    \item What makes this village dependent?
+    \item Which barriers are removable with investment?
+    \item What score improvement happens if one barrier is removed?
+\end{enumerate}
+
+That implies a public site with the following views:
+
+\begin{itemize}
+    \item \textbf{Need catalog:} searchable list of all needs with scope, barriers, and references.
+    \item \textbf{Village map/tree view:} households, neighbor groups, wards, village institutions.
+    \item \textbf{Dependency graph:} interactive routes from household to source of need satisfaction.
+    \item \textbf{Scenario simulator:} ``What if every ward had a school?'' or ``What if households had hand mills?''
+    \item \textbf{Barrier dashboard:} removable vs. structural barriers.
+    \item \textbf{Policy summary:} top interventions that reduce route length most efficiently.
+\end{itemize}
+
+The current repository now implements the first public step of this design: \path{export_public_data.py} generates \path{dist/village_governance_dashboard_data.json}, 
+and the \texttt{public/} directory contains a static dashboard that renders summary cards, top interventions, budget scenarios, a searchable need catalog, 
+and a filtered dependency graph.
+
+\subsection{Modification Model}
+
+For safe public modification, raw file editing is the wrong surface. The correct surface is:
+
+\begin{enumerate}
+    \item User proposes a change in a form.
+    \item System validates it against schema and semantic rules.
+    \item System previews route/score impact.
+    \item Reviewer approves or rejects with rationale.
+    \item Canonical model updates and exports regenerate.
+\end{enumerate}
+
+This makes the system both public-facing and governable.
+
+\subsection{Implemented Immediate Structural Improvements}
+
+The current repository now includes the following high-value structural improvements:
+
+\begin{enumerate}
+    \item One canonical human-edited machine source of truth for needs in \path{village_needs_catalog.yaml}, with generated JSON exports.
+    \item Semantic validation beyond schema: target node must actually satisfy/provide the required need; tree scope must respect 
+    allowed scope options; evidence and confidence must be structurally valid.
+    \item Explicit feasibility and budget-scenario planning so route minimization can be compared against cost and implementation effort.
+    \item A public export step that produces a compact, frontend-ready dashboard bundle.
+    \item A static public dashboard as the initial public interface, ready to be extended into richer interactive views.
+\end{enumerate}
+
+\subsection{Minimality Principle}
+
+Minimality here should not mean fewer ideas. It should mean fewer \textit{authoritative representations}. The ideal state is:
+
+\begin{quote}
+One canonical model, one main human document, one command surface, and many generated outputs.
+\end{quote}
+
+That is the most maintainable way to remain 100\% comprehensive while still being easy to explain, modify, and publish.
+
+%==============================================================================
+\part{Part X: Decision and Feasibility Review}
+%==============================================================================
+
+\section{One Hundred Questions Before Committing to Format, Tooling, and Public Platform}
+
+Strong governance design should not jump from preference to implementation. The following ten groups of ten questions form a 
+decision gate before major architectural choices such as ``YAML vs. JSON'', ``repo vs. database'', or ``static site vs. application''.
+
+\subsection{A. Mission and Scope}
+\begin{enumerate}
+    \item What is the precise primary objective: documentation, planning, simulation, coordination, or public governance?
+    \item Is the system for one village, many villages, or a national template?
+    \item What must remain minimal, and what must remain comprehensive?
+    \item Which parts are normative policy, and which parts are descriptive observation?
+    \item Is the unit of governance the household, the ward, the village, or multiple nested levels equally?
+    \item What decisions must the system support in the next 12 months?
+    \item What decisions might the system support in the next 10 years?
+    \item Which users matter most at launch: researchers, planners, villagers, NGOs, or the public?
+    \item What would count as failure even if the data model is technically correct?
+    \item What would count as success even if the system remains technologically simple?
+\end{enumerate}
+
+\subsection{B. Canonical Data Model}
+\begin{enumerate}
+    \item What is the single canonical source of truth?
+    \item Which facts belong in the need definition versus the village deployment?
+    \item Which facts are timeless taxonomy versus context-specific local data?
+    \item Should barriers belong to needs, deployments, or both?
+    \item How should evidence, citations, and local observations be attached to claims?
+    \item How should uncertainty be represented: confidence, unknown, disputed, provisional?
+    \item How should external dependencies be encoded distinctly from internal dependencies?
+    \item Should costs be stored as absolute numbers, ranges, or scenario assumptions?
+    \item How should time be represented: current state, target state, planned state, historical state?
+    \item How will the model evolve without forcing incompatible rewrites?
+\end{enumerate}
+
+\subsection{C. YAML vs. JSON Decision}
+\begin{enumerate}
+    \item Is the primary author a human editor or a machine pipeline?
+    \item Will comments and policy notes be important in the canonical data?
+    \item Does the team need a format that non-programmers can edit directly?
+    \item Are strict machine contracts more important than human readability?
+    \item Can the team enforce one serializer and one formatting standard?
+    \item Will multiple tools consume the model through generated JSON anyway?
+    \item Is it acceptable to keep JSON only as an export rather than a source?
+    \item How will accidental YAML ambiguity be prevented?
+    \item How will field order be stabilized for reviews and diffs?
+    \item Is the chosen canonical format reversible if the platform later moves to a database?
+\end{enumerate}
+
+\subsection{D. Governance Semantics}
+\begin{enumerate}
+    \item What exactly does ``satisfies'' mean operationally?
+    \item What exactly does ``provides'' mean operationally?
+    \item Can a node provide something it does not satisfy internally?
+    \item When is a dependency considered acceptable rather than a design weakness?
+    \item How should collective ownership be modeled differently from service access?
+    \item How should legal requirements be distinguished from practical constraints?
+    \item How should seasonal availability be represented?
+    \item How should emergency-only pathways be represented separately from normal pathways?
+    \item How should quality differences be represented, not just binary availability?
+    \item What is the formal meaning of self-sufficiency in this system?
+\end{enumerate}
+
+\subsection{E. Validation and Data Quality}
+\begin{enumerate}
+    \item Which errors are structural, which are semantic, and which are policy judgments?
+    \item Should validation fail if a target node does not actually provide the required need?
+    \item Should validation fail if a node satisfies a need at a disallowed scope?
+    \item Should barriers be mandatory whenever a need is deployed above minimum scope?
+    \item How should contradictions between citations and local practice be handled?
+    \item Should incomplete entries be allowed in draft mode?
+    \item How should deprecated needs or old categories be handled?
+    \item How will the system catch drift between technical documentation and machine data?
+    \item What validations belong in the command line versus the public UI?
+    \item Which validations must block publication?
+\end{enumerate}
+
+\subsection{F. Feasibility and Economics}
+\begin{enumerate}
+    \item What is the cost to push each removable barrier down one level?
+    \item What is the maintenance burden after the initial investment?
+    \item Which interventions save the most route length per unit cost?
+    \item Which interventions create fragility even while shortening routes?
+    \item When is shared infrastructure economically superior to household independence?
+    \item How should labor availability be modeled as a real constraint?
+    \item How should training time be modeled as a cost?
+    \item Which technologies are repairable locally and which create new dependency?
+    \item How should replacement cycles be modeled for equipment like solar or pumps?
+    \item Which ``self-sufficiency'' choices are symbolic but economically weak?
+\end{enumerate}
+
+\subsection{G. Public Presentation}
+\begin{enumerate}
+    \item What should a villager understand in under three minutes?
+    \item What should a planner understand in under ten minutes?
+    \item What should a researcher be able to inspect in raw form?
+    \item Which public views are essential on day one?
+    \item Should the public see raw routes or summarized indicators first?
+    \item How should complex dependency graphs be made understandable on mobile devices?
+    \item How should Nepali and English coexist in the public interface?
+    \item Which outputs should be printable for low-connectivity environments?
+    \item What should be interactive versus static?
+    \item Which public outputs must be generated automatically from the canonical model?
+\end{enumerate}
+
+\subsection{H. Editing and Decision Workflow}
+\begin{enumerate}
+    \item Who is allowed to propose a change?
+    \item Who is allowed to approve a change?
+    \item What evidence is required before adding a new need or barrier?
+    \item Should every change include a rationale and expected route impact?
+    \item Should the system preview score changes before approval?
+    \item How should disputes over taxonomy be resolved?
+    \item How will local knowledge be incorporated without losing consistency?
+    \item How should experimental scenarios be separated from approved policy state?
+    \item How will major version changes be governed?
+    \item What is the rollback procedure if a bad change is approved?
+\end{enumerate}
+
+\subsection{I. Platform Growth}
+\begin{enumerate}
+    \item When does a repo stop being enough?
+    \item At what scale does a database become necessary?
+    \item When does a static site stop being enough?
+    \item Which APIs will external consumers eventually need?
+    \item How should authentication be introduced if public editing is added later?
+    \item Which parts of the system should remain exportable as plain files forever?
+    \item How should village-specific customization coexist with a shared national taxonomy?
+    \item How should scenario engines evolve without breaking the canonical model?
+    \item What must remain offline-capable?
+    \item Which technical choices today would make later scaling unnecessarily hard?
+\end{enumerate}
+
+\subsection{J. Decision Gate}
+\begin{enumerate}
+    \item Is the current decision being made because it is truly better, or only because it is familiar?
+    \item What assumptions are still untested?
+    \item What would change the decision if new evidence appeared next month?
+    \item What is the cost of choosing too early?
+    \item What is the cost of delaying too long?
+    \item Which decision is reversible and which is hard to reverse?
+    \item Can the next version preserve optionality while still delivering value now?
+    \item Which smallest improvement would reduce confusion immediately?
+    \item If the system doubled in complexity, would the chosen architecture still be intelligible?
+    \item If the public had to trust this system, what proof of rigor would they require?
+\end{enumerate}
+
+\section{Current Decision}
+
+Based on the present repository and the questions above, the strongest immediate decision is:
+
+\begin{enumerate}
+    \item Keep \texttt{village\_needs\_schema.json} as JSON.
+    \item Make \texttt{village\_needs\_catalog.yaml} the canonical human-edited source.
+    \item Keep \path{village_governance_tree.yaml} as canonical deployment structure.
+    \item Keep \texttt{budget\_scenarios.yaml} as canonical named planning input for budget choices.
+    \item Generate JSON only as an export artifact for tools and public interfaces, including the dashboard bundle.
+    \item Delay any move to a database or full application until multi-user editing and approval workflows become real needs.
+\end{enumerate}
+
+This preserves human readability, keeps the system extensible, and avoids premature platform complexity.
+
+%==============================================================================
+\part{Part XI: References}
+%==============================================================================
+
+\section{References and Further Reading}
+
+The following research articles, books, and reports inform this framework. Links and citations are provided for deeper study.
+
+\subsection{Infrastructure \& Wellbeing}
+\begin{itemize}
+    \item \textbf{Access to infrastructure and human well-being: evidence from rural Nepal.} Examines how roads, water, irrigation, 
+    electricity, and other infrastructure affect wellbeing; finds roads highest priority, followed by drinking water and irrigation; 
+    remote areas show 50--65\% lower per capita income, higher malnutrition and 
+    dropout. \url{https://scispace.com/pdf/access-to-infrastructure-and-human-well-being-evidence-from-4uuy9g9dkt.pdf}
+    \item \textbf{Rural Living in Nepal: Housing, Water \& Waste in Paanchkhal.} NPRC Journal of Multidisciplinary Research. 
+    Housing (Pakka/Kachcha), water sources, purification, latrines, waste disposal. \url{https://nepjol.info/index.php/nprcjmr/article/view/78324}
+\end{itemize}
+
+\subsection{Water \& Irrigation}
+\begin{itemize}
+    \item \textbf{Does Rural Water System Design Matter? A Study of Productive Use of Water in Rural Nepal.} Water 11(10), 1978. 
+    Productive use of water beyond drinking. \url{https://www.mdpi.com/2073-4441/11/10/1978}
+    \item \textbf{Functionality of Rural Community Water Supply Systems and Collective Action: Guras Rural Municipality, Karnali.} \url{https://nppr.org.np/index.php/journal/article/view/26/53}
+    \item \textbf{Sulitar Irrigation System: Struggle from Poverty to Prosperity.} Hydro Nepal. Farmer-managed irrigation, participatory approach, 
+    community ownership. \url{https://www.nepjol.info/index.php/HN/article/view/13276}
+    \item \textbf{Farmers in Nepal reap benefits of rehabilitated farmers-managed irrigation systems.} 
+    Asian Development Bank. FMIS rehabilitation, crop intensification, income gains. \url{https://www.adb.org/results/farmers-nepal-reap-benefits-rehabilitated-farmers-managed-irrigation-systems}
+    \item \textbf{Improving irrigation governance and management in Nepal.} Virginia Tech. 20+ years of research on community resource management. \url{https://vtechworks.lib.vt.edu/items/cbc1aa78-7c13-4404-bfbf-2552edcc72e7}
+    \item \textbf{Irrigation in Nepal: Opportunities and Constraints.} Third World Centre. \url{https://thirdworldcentre.org/wp-content/uploads/2020/07/RPP-Dec-1-1989-Irrigation-in-Nepal-Opportunities-and-Constraints.pdf}
+\end{itemize}
+
+\subsection{Food Security \& Post-Harvest}
+\begin{itemize}
+    \item \textbf{Karki TB, Sah SK, Thapa RB, McDonald AJ, Davis AS (2015) Identifying Pathways for Improving Household Food Self-Sufficiency Outcomes in the Hills of Nepal.} PLoS ONE 10(6): e0127513. CART analysis; agronomic management, maize-fingermillet yields, improved cultivars as primary drivers. \url{https://doi.org/10.1371/journal.pone.0127513}
+    \item \textbf{Post-harvest practices of horticultural crops in Nepal: Issues and management.} 20--50\% post-harvest loss; cold storage, packaging. \url{https://www.academia.edu/66093653/Post_harvest_practices_of_horticultural_crops_in_Nepal_Issues_and_management}
+    \item \textbf{On-Farm Grain Storage and Challenges in Bagmati Province, Nepal.} Sustainability. 5--20\% storage loss; pests, monsoon; hermetic storage adoption low. \url{https://www.cgiar.org/research/publication/on-farm-grain-storage-and-challenges-in-bagmati-province-nepal/}
+    \item \textbf{Assessing the Impact of Hermetic Storage Technology on Post-harvest Losses among Maize Farmers in Nepal.} Preprints. \url{https://www.preprints.org/manuscript/202411.1421/v1}
+\end{itemize}
+
+\subsection{Energy}
+\begin{itemize}
+    \item \textbf{Techno-Economic Modelling of Micro-Hydropower Mini-Grids in Nepal.} Energies. Financial sustainability, electric cooking, productive use. \url{https://www.mdpi.com/2071-1050/14/16/4232}
+    \item \textbf{Identifying the best decentralized renewable energy system for rural electrification in Nepal.} Journal of Asian Rural Studies. Micro-hydro ranked best, then solar. \url{http://pasca.unhas.ac.id/ojs/index.php/jars/article/view/2097}
+    \item \textbf{Performance evaluation of solar PV mini grid system in Nepal: Thabang and Sugarkhal.} Frontiers in Energy Research. \url{https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2023.1321945/full}
+    \item \textbf{Sustainability assessment of a micro hydropower plant in Nepal.} Energy, Sustainability and Society. \url{https://energsustainsoc.biomedcentral.com/articles/10.1186/s13705-018-0147-2}
+\end{itemize}
+
+\subsection{Health \& Education}
+\begin{itemize}
+    \item \textbf{Perception of Health and Care Seeking Behaviors in High-Altitude Villages of Rural Nepal.} HPROSPECT. Traditional healers, cultural beliefs, accessibility. \url{https://nepjol.info/index.php/HPROSPECT/article/view/24103}
+    \item \textbf{Assessing the health impacts of a Comprehensive Rural Health Project in Nepal.} PLOS Global Public Health. Village Alive Project, Dalit villages. \url{https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0004458}
+\end{itemize}
+
+\subsection{Rural Development \& Transport}
+\begin{itemize}
+    \item \textbf{Rural Transportation Infrastructure in Low- and Middle-Income Countries.} Sustainability. 
+    Impacts, interventions, links to agriculture and health. \url{https://www.mdpi.com/2071-1050/14/4/2149}
+    \item \textbf{Handbook of Rural Development.} Comprehensive rural development scope.
+    \item \textbf{Infrastructure for Smart Villages.} Routledge. Fit-for-purpose rural infrastructure, SDG alignment.
+    \item \textbf{UN Handbook on Infrastructure Asset Management.} Managing infrastructure for sustainable development.
+\end{itemize}
+
+\end{document}

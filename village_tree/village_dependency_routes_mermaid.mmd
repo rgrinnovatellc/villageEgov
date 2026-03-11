@@ -1,0 +1,105 @@
+graph LR
+  village["Village"]
+  ward_1["Ward 1"]
+  n1_1["Neighbor Group 1.1"]
+  h1_1_1["Household 1.1.1"]
+  h1_1_2["Household 1.1.2"]
+  h1_1_3["Household 1.1.3"]
+  n1_2["Neighbor Group 1.2"]
+  h1_2_1["Household 1.2.1"]
+  h1_2_2["Household 1.2.2"]
+  h1_2_3["Household 1.2.3"]
+  ward_2["Ward 2"]
+  n2_1["Neighbor Group 2.1"]
+  h2_1_1["Household 2.1.1"]
+  h2_1_2["Household 2.1.2"]
+  h2_1_3["Household 2.1.3"]
+  n2_2["Neighbor Group 2.2"]
+  h2_2_1["Household 2.2.1"]
+  h2_2_2["Household 2.2.2"]
+  h2_2_3["Household 2.2.3"]
+  h1_1_1 -->|Labor exchange (parma) (1)| n1_1
+  h1_1_1 -->|Primary, secondary school (3)| village
+  h1_1_1 -->|Community forest, grazing land (3)| village
+  h1_1_1 -->|Haat bazaar, weekly market (3)| village
+  h1_1_1 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_1_1 -->|Health post, FCHV (3)| village
+  h1_1_1 -->|Piped supply, gravity-fed (2)| ward_1
+  h1_1_2 -->|Labor exchange (parma) (1)| n1_1
+  h1_1_2 -->|Primary, secondary school (3)| village
+  h1_1_2 -->|Haat bazaar, weekly market (3)| village
+  h1_1_2 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_1_2 -->|Piped supply, gravity-fed (2)| ward_1
+  h1_1_3 -->|Labor exchange (parma) (1)| n1_1
+  h1_1_3 -->|Agricultural tools (plough, sickle, kodalo) (1)| n1_1
+  h1_1_3 -->|Primary, secondary school (3)| village
+  h1_1_3 -->|Haat bazaar, weekly market (3)| village
+  h1_1_3 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_1_3 -->|Health post, FCHV (3)| village
+  h1_1_3 -->|Piped supply, gravity-fed (2)| ward_1
+  h1_2_1 -->|Labor exchange (parma) (1)| n1_2
+  h1_2_1 -->|Canals (kulo), diversion weirs (1)| n1_2
+  h1_2_1 -->|Power tiller, tractor for land prep (1)| n1_2
+  h1_2_1 -->|Primary, secondary school (3)| village
+  h1_2_1 -->|Community forest, grazing land (3)| village
+  h1_2_1 -->|Haat bazaar, weekly market (3)| village
+  h1_2_1 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_2_1 -->|Piped supply, gravity-fed (2)| ward_1
+  h1_2_2 -->|Labor exchange (parma) (1)| n1_2
+  h1_2_2 -->|Primary, secondary school (3)| village
+  h1_2_2 -->|Haat bazaar, weekly market (3)| village
+  h1_2_2 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_2_2 -->|Piped supply, gravity-fed (2)| ward_1
+  h1_2_3 -->|Labor exchange (parma) (1)| n1_2
+  h1_2_3 -->|Agricultural tools (plough, sickle, kodalo) (1)| n1_2
+  h1_2_3 -->|Canals (kulo), diversion weirs (1)| n1_2
+  h1_2_3 -->|Primary, secondary school (3)| village
+  h1_2_3 -->|Community forest, grazing land (3)| village
+  h1_2_3 -->|Haat bazaar, weekly market (3)| village
+  h1_2_3 -->|Rice mill, oil mill, flour mill (3)| village
+  h1_2_3 -->|Piped supply, gravity-fed (2)| ward_1
+  h2_1_1 -->|Labor exchange (parma) (1)| n2_1
+  h2_1_1 -->|Community forest, grazing land (3)| village
+  h2_1_1 -->|Haat bazaar, weekly market (3)| village
+  h2_1_1 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_1_1 -->|Citizenship, land registration (3)| village
+  h2_1_1 -->|Health post, FCHV (3)| village
+  h2_1_1 -->|Spring/well/river as drinking source (2)| ward_2
+  h2_1_2 -->|Labor exchange (parma) (1)| n2_1
+  h2_1_2 -->|Haat bazaar, weekly market (3)| village
+  h2_1_2 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_1_2 -->|Health post, FCHV (3)| village
+  h2_1_2 -->|Spring/well/river as drinking source (2)| ward_2
+  h2_1_3 -->|Labor exchange (parma) (1)| n2_1
+  h2_1_3 -->|Agricultural tools (plough, sickle, kodalo) (1)| n2_1
+  h2_1_3 -->|Primary, secondary school (3)| village
+  h2_1_3 -->|Community forest, grazing land (3)| village
+  h2_1_3 -->|Haat bazaar, weekly market (3)| village
+  h2_1_3 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_1_3 -->|Piped supply, gravity-fed (2)| ward_2
+  h2_2_1 -->|Labor exchange (parma) (1)| n2_2
+  h2_2_1 -->|Primary, secondary school (3)| village
+  h2_2_1 -->|Community forest, grazing land (3)| village
+  h2_2_1 -->|Haat bazaar, weekly market (3)| village
+  h2_2_1 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_2_1 -->|Spring/well/river as drinking source (2)| ward_2
+  h2_2_2 -->|Labor exchange (parma) (1)| n2_2
+  h2_2_2 -->|Bank, mobile banking (3)| village
+  h2_2_2 -->|Internet, digital services (3)| village
+  h2_2_2 -->|Primary, secondary school (3)| village
+  h2_2_2 -->|Haat bazaar, weekly market (3)| village
+  h2_2_2 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_2_2 -->|Piped supply, gravity-fed (2)| ward_2
+  h2_2_3 -->|Labor exchange (parma) (1)| n2_2
+  h2_2_3 -->|Agricultural tools (plough, sickle, kodalo) (1)| n2_2
+  h2_2_3 -->|Primary, secondary school (3)| village
+  h2_2_3 -->|Community forest, grazing land (3)| village
+  h2_2_3 -->|Haat bazaar, weekly market (3)| village
+  h2_2_3 -->|Rice mill, oil mill, flour mill (3)| village
+  h2_2_3 -->|Piped supply, gravity-fed (2)| ward_2
+  n1_2 -->|Piped supply, gravity-fed (1)| ward_1
+  ward_1 -->|Community forest, grazing land (1)| village
+  ward_1 -->|Roads, bridges, street lighting (1)| village
+  ward_1 -->|Water user committee (1)| village
+  ward_2 -->|Roads, bridges, street lighting (1)| village
+  ward_2 -->|Water user committee (1)| village

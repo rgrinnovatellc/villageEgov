@@ -1,0 +1,333 @@
+:root {
+  --bg: #f4efe4;
+  --paper: #fbf8f1;
+  --ink: #1f2a22;
+  --muted: #5e6b61;
+  --line: #d8cfbf;
+  --accent: #516b4f;
+  --accent-2: #a8642a;
+  --shadow: 0 20px 50px rgba(49, 55, 45, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(168, 100, 42, 0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(81, 107, 79, 0.12), transparent 28%),
+    var(--bg);
+}
+
+.shell {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(81, 107, 79, 0.9), rgba(34, 55, 40, 0.92));
+  color: #f8f6f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.lede {
+  max-width: 760px;
+  margin: 12px 0 0;
+  line-height: 1.6;
+}
+
+.cards,
+.scenario-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.scenario-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card,
+.panel,
+.scenario {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  padding: 18px;
+}
+
+.card .label {
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card .value {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 22px;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.panel-head p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(81, 107, 79, 0.12);
+  color: var(--accent);
+  font-size: 12px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.scenario {
+  padding: 18px;
+}
+
+.scenario h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.scenario p {
+  color: var(--muted);
+}
+
+.scenario ul {
+  padding-left: 18px;
+}
+
+.search {
+  width: 100%;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font: inherit;
+  background: #fffdf8;
+}
+
+.graph-toolbar {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.graph-toolbar label {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.graph-toolbar .search {
+  margin-top: 0;
+  max-width: 420px;
+}
+
+.graph-stats {
+  margin-top: 14px;
+}
+
+.graph-stage {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(81, 107, 79, 0.04), transparent 22%),
+    #fffdf8;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.graph-stage svg {
+  width: 100%;
+  min-width: 980px;
+  height: auto;
+}
+
+.graph-details {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.graph-detail-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fffdf8;
+  padding: 16px;
+}
+
+.graph-detail-card h3,
+.graph-detail-card h4 {
+  margin: 0 0 8px;
+}
+
+.graph-detail-card ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.graph-detail-card li {
+  margin-bottom: 6px;
+}
+
+.graph-column-label {
+  fill: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.graph-edge {
+  fill: none;
+  stroke: rgba(168, 100, 42, 0.4);
+  stroke-linecap: round;
+}
+
+.graph-node rect {
+  stroke: rgba(31, 42, 34, 0.12);
+  stroke-width: 1.2;
+  transition: stroke 160ms ease, fill 160ms ease;
+}
+
+.graph-node text {
+  fill: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.graph-node {
+  cursor: pointer;
+}
+
+.graph-node:hover rect,
+.graph-node.active rect {
+  stroke: rgba(168, 100, 42, 0.88);
+  stroke-width: 2.4;
+}
+
+.graph-node-H rect {
+  fill: rgba(81, 107, 79, 0.14);
+}
+
+.graph-node-N rect {
+  fill: rgba(81, 107, 79, 0.22);
+}
+
+.graph-node-W rect {
+  fill: rgba(168, 100, 42, 0.18);
+}
+
+.graph-node-V rect {
+  fill: rgba(31, 42, 34, 0.14);
+}
+
+.need-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.need-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fffdf8;
+}
+
+.need-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(100vw - 20px, 1180px);
+    padding-top: 20px;
+  }
+
+  .hero,
+  .panel {
+    padding: 18px;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+}

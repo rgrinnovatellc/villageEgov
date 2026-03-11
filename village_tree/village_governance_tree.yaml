@@ -1,0 +1,687 @@
+# Minimal governance prototype for a small village.
+# Every need from village_needs_catalog.yaml is satisfied or required somewhere.
+# Canonical authoring structure uses a normalized governance-node registry so
+# households, neighbor groups, wards, and future intermediate layers can change
+# without rewriting the code architecture.
+
+version: '1.1'
+scope: 90% self-sufficient village
+completeness: all 65 needs covered
+root_node: village
+nodes:
+- id: village
+  name: Village
+  type: V
+  parent_id: null
+  child_ids:
+  - ward_1
+  - ward_2
+  status: active
+  meta:
+    satisfies:
+    - food.market.haat
+    - food.market.shop
+    - food.storage.cold
+    - food.processing.mill
+    - food.nutrition.schoolmeal
+    - education.school
+    - education.ecd
+    - education.vocational
+    - health.healthpost
+    - energy.electricity.grid
+    - energy.electricity.streetlight
+    - energy.mechanical.mill
+    - energy.mechanical.coldstore
+    - governance.ward_office
+    - governance.documentation
+    - commerce.bank
+    - commerce.cooperative
+    - infrastructure.road
+    - water.drinking.committee
+    - water.emergency.handpump
+    - environment.forest
+    - conservation.grain_bank
+    - security.disaster
+    - social.temple
+    - industry.mill
+    - transport.road
+    - communication.internet
+    provides:
+    - food.market.haat
+    - food.processing.mill
+    - education.school
+    - health.healthpost
+    - governance.ward_office
+    - commerce.bank
+    - infrastructure.road
+    - environment.forest
+    requires: []
+- id: ward_1
+  name: Ward 1
+  type: W
+  parent_id: village
+  child_ids:
+  - n1_1
+  - n1_2
+  status: active
+  meta:
+    satisfies:
+    - transport.trail
+    - water.drinking.piped
+    - water.drinking.spring
+    - food.market.shop
+    - governance.dispute
+    - sanitation.waste
+    provides:
+    - water.drinking.piped
+    - transport.trail
+    requires:
+    - node: village
+      need: water.drinking.committee
+    - node: village
+      need: infrastructure.road
+    - node: village
+      need: environment.forest
+- id: n1_1
+  name: Neighbor Group 1.1
+  type: N
+  parent_id: ward_1
+  child_ids:
+  - h1_1_1
+  - h1_1_2
+  - h1_1_3
+  status: active
+  meta:
+    satisfies:
+    - commerce.parma
+    - governance.dispute
+    - social.festival
+    - food.agri.tools
+    provides:
+    - commerce.parma
+    - food.agri.tools
+    requires: []
+- id: h1_1_1
+  name: Household 1.1.1
+  type: H
+  parent_id: n1_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.vegetables.kitchen
+    - food.livestock
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - transport.packanimal
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_1
+      need: water.drinking.piped
+    - node: n1_1
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: health.healthpost
+    - node: village
+      need: environment.forest
+    - node: village
+      need: food.processing.mill
+- id: h1_1_2
+  name: Household 1.1.2
+  type: H
+  parent_id: n1_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.vegetables.kitchen
+    - food.livestock
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.biogas
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - communication.radio
+    - communication.mobile
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_1
+      need: water.drinking.piped
+    - node: n1_1
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+- id: h1_1_3
+  name: Household 1.1.3
+  type: H
+  parent_id: n1_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - transport.packanimal
+    - communication.radio
+    - legal.rights
+    - sanitation.waste
+    requires:
+    - node: ward_1
+      need: water.drinking.piped
+    - node: n1_1
+      need: commerce.parma
+    - node: n1_1
+      need: food.agri.tools
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: health.healthpost
+    - node: village
+      need: food.processing.mill
+- id: n1_2
+  name: Neighbor Group 1.2
+  type: N
+  parent_id: ward_1
+  child_ids:
+  - h1_2_1
+  - h1_2_2
+  - h1_2_3
+  status: active
+  meta:
+    satisfies:
+    - water.irrigation.kulo
+    - water.irrigation.tiller
+    - commerce.parma
+    - governance.dispute
+    - social.festival
+    provides:
+    - water.irrigation.kulo
+    - water.irrigation.tiller
+    - commerce.parma
+    - food.agri.tools
+    requires:
+    - node: ward_1
+      need: water.drinking.piped
+- id: h1_2_1
+  name: Household 1.2.1
+  type: H
+  parent_id: n1_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.vegetables.kitchen
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.irrigation.pump
+    - water.irrigation.pipes
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - transport.packanimal
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    need_deps:
+    - need: water.irrigation.pump
+      depends_on: water.irrigation.pipes
+    - need: energy.cooking.firewood
+      depends_on: environment.forest
+    requires:
+    - node: n1_2
+      need: water.irrigation.kulo
+    - node: n1_2
+      need: commerce.parma
+    - node: ward_1
+      need: water.drinking.piped
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest
+    - node: n1_2
+      need: water.irrigation.tiller
+- id: h1_2_2
+  name: Household 1.2.2
+  type: H
+  parent_id: n1_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.livestock
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.biogas
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: n1_2
+      need: commerce.parma
+    - node: ward_1
+      need: water.drinking.piped
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+- id: h1_2_3
+  name: Household 1.2.3
+  type: H
+  parent_id: n1_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - transport.packanimal
+    - communication.radio
+    - legal.rights
+    - sanitation.waste
+    requires:
+    - node: n1_2
+      need: water.irrigation.kulo
+    - node: n1_2
+      need: commerce.parma
+    - node: n1_2
+      need: food.agri.tools
+    - node: ward_1
+      need: water.drinking.piped
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest
+- id: ward_2
+  name: Ward 2
+  type: W
+  parent_id: village
+  child_ids:
+  - n2_1
+  - n2_2
+  status: active
+  meta:
+    satisfies:
+    - transport.trail
+    - water.drinking.spring
+    - water.drinking.piped
+    - food.market.shop
+    - governance.dispute
+    - sanitation.waste
+    provides:
+    - water.drinking.spring
+    - water.drinking.piped
+    - transport.trail
+    requires:
+    - node: village
+      need: water.drinking.committee
+    - node: village
+      need: infrastructure.road
+- id: n2_1
+  name: Neighbor Group 2.1
+  type: N
+  parent_id: ward_2
+  child_ids:
+  - h2_1_1
+  - h2_1_2
+  - h2_1_3
+  status: active
+  meta:
+    satisfies:
+    - commerce.parma
+    - governance.dispute
+    - social.festival
+    - food.agri.tools
+    provides:
+    - commerce.parma
+    - food.agri.tools
+    requires: []
+- id: h2_1_1
+  name: Household 2.1.1
+  type: H
+  parent_id: n2_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.vegetables.kitchen
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.rainwater
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - transport.packanimal
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.spring
+    - node: n2_1
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: health.healthpost
+    - node: village
+      need: governance.documentation
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest
+- id: h2_1_2
+  name: Household 2.1.2
+  type: H
+  parent_id: n2_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.livestock
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.biogas
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - communication.radio
+    - communication.mobile
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.spring
+    - node: n2_1
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: health.healthpost
+    - node: village
+      need: food.processing.mill
+- id: h2_1_3
+  name: Household 2.1.3
+  type: H
+  parent_id: n2_1
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - transport.packanimal
+    - communication.radio
+    - legal.rights
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.piped
+    - node: n2_1
+      need: commerce.parma
+    - node: n2_1
+      need: food.agri.tools
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest
+- id: n2_2
+  name: Neighbor Group 2.2
+  type: N
+  parent_id: ward_2
+  child_ids:
+  - h2_2_1
+  - h2_2_2
+  - h2_2_3
+  status: active
+  meta:
+    satisfies:
+    - commerce.parma
+    - governance.dispute
+    - social.festival
+    - food.agri.tools
+    provides:
+    - commerce.parma
+    - food.agri.tools
+    requires: []
+- id: h2_2_1
+  name: Household 2.2.1
+  type: H
+  parent_id: n2_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.vegetables.kitchen
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.rainwater
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.spring
+    - node: n2_2
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest
+- id: h2_2_2
+  name: Household 2.2.2
+  type: H
+  parent_id: n2_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.livestock
+    - food.agri.seeds
+    - food.agri.fertilizer
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.biogas
+    - energy.cooking.chulo
+    - energy.electricity.solar
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - clothing.fabric
+    - communication.radio
+    - health.maternal
+    - legal.rights
+    - industry.craft
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.piped
+    - node: n2_2
+      need: commerce.parma
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: commerce.bank
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: communication.internet
+- id: h2_2_3
+  name: Household 2.2.3
+  type: H
+  parent_id: n2_2
+  child_ids: []
+  status: active
+  meta:
+    satisfies:
+    - food.staples.own
+    - food.agri.tools
+    - food.storage.bharako
+    - conservation.food_drying
+    - energy.cooking.firewood
+    - energy.cooking.chulo
+    - shelter.construction
+    - shelter.comfort
+    - shelter.toilet
+    - water.drinking.purification
+    - water.drinking.storage
+    - transport.packanimal
+    - communication.radio
+    - legal.rights
+    - sanitation.waste
+    requires:
+    - node: ward_2
+      need: water.drinking.piped
+    - node: n2_2
+      need: commerce.parma
+    - node: n2_2
+      need: food.agri.tools
+    - node: village
+      need: food.market.haat
+    - node: village
+      need: education.school
+    - node: village
+      need: food.processing.mill
+    - node: village
+      need: environment.forest

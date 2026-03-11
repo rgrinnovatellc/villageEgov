@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.1)  11 MAR 2026 09:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.1)  11 MAR 2026 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**village_life_needs.tex
-(./village_life_needs.tex
+**village_governance_technical_framework_nepal.tex
+(./village_governance_technical_framework_nepal.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -213,35 +213,58 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen159
+\ar@mcellbox=\box53
+\extrarowheight=\dimen160
+\NC@list=\toks23
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count278
+\TX@ftn=\toks24
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count278
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count279
+\l__pdf_internal_box=\box55
 )
-(build/village_life_needs.aux)
-\openout1 = `village_life_needs.aux'.
+(build/village_governance_technical_framework_nepal.aux)
+\openout1 = `village_governance_technical_framework_nepal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -277,113 +300,82 @@ LaTeX Font Info:    ... okay on input line 21.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 21.
-(build/village_life_needs.out) (build/village_life_needs.out)
+Package hyperref Info: Link coloring OFF on input line 26.
+(build/village_governance_technical_framework_nepal.out)
+(build/village_governance_technical_framework_nepal.out)
 \@outlinefile=\write3
-\openout3 = `village_life_needs.out'.
+\openout3 = `village_governance_technical_framework_nepal.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 24.
+(Font)              <12> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 24.
+(Font)              <6> on input line 29.
 
-(build/village_life_needs.toc
+(build/village_governance_technical_framework_nepal.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(Font)              <10.95> on input line 2.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/cm-super/cm-super-t1.enc}] [2])
+dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5])
 \tf@toc=\write4
-\openout4 = `village_life_needs.toc'.
+\openout4 = `village_governance_technical_framework_nepal.toc'.
 
- [3]
-[4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6]
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-
-Package enumitem Warning: Negative labelwidth. This does not make much
-(enumitem)                sense, on input line 1019.
-
-
-Overfull \hbox (1.81306pt too wide) in paragraph at lines 1019--1020
-[]\T1/cmr/m/n/10.95 Local wa-ter, fire-wood, sub-sis-tence agri-cul-ture, foot/
-mule trans-port, health posts,
+ [6] [7] [8{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [9] [1
+0] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+[20] [21] [22] [23] [24] [25]
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd) [26] [27] [28]
+[29] [30] [31]
+Underfull \hbox (badness 1067) in paragraph at lines 1345--1346
+[]\T1/cmr/m/n/10.95 The cur-rent anal-y-sis im-ple-men-ta-tion uses the ac-tual
+ con-tain-ment hi-er-ar-chy to mea-sure
  []
 
-[20]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-035.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Overfull \hbox (148.14542pt too wide) in paragraph at lines 1044--1045
-[]$\T1/cmtt/m/n/10.95 https : / / www . adb . org / results / farmers-[]nepal-[
-]reap-[]benefits-[]rehabilitated-[]farmers-[]managed-[]irrigation-[]systems$[] 
-
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
+Underfull \hbox (badness 1424) in paragraph at lines 1903--1904
+[]\T1/cmr/bx/n/10.95 Karki TB, Sah SK, Thapa RB, Mc-Don-ald AJ, Davis AS (2015)
+ Iden-ti-
  []
 
 
-Overfull \hbox (200.07076pt too wide) in paragraph at lines 1046--1047
-\T1/cmtt/m/n/10.95 thirdworldcentre . org / wp-[]content / uploads / 2020 / 07 
-/ RPP-[]Dec-[]1-[]1989-[]Irrigation-[]in-[]Nepal-[]Opportunities-[]and-[]Constr
-aints .
+Underfull \hbox (badness 2753) in paragraph at lines 1903--1904
+\T1/cmr/bx/n/10.95 fy-ing Path-ways for Im-prov-ing House-hold Food Self-Suffic
+iency Out-comes
  []
 
-
-Overfull \hbox (11.20525pt too wide) in paragraph at lines 1051--1052
-\T1/cmr/bx/n/10.95 Nepal. \T1/cmr/m/n/10.95 PLoS ONE 10(6): e0127513. CART anal
--y-sis; agro-nomic man-age-ment, maize-fingermillet
- []
-
-
-Overfull \hbox (35.478pt too wide) in paragraph at lines 1053--1054
-\T1/cmtt/m/n/10.95 research / publication / on-[]farm-[]grain-[]storage-[]and-[
-]challenges-[]in-[]bagmati-[]province-[]nepal/$[] 
- []
-
-[21]
-Overfull \hbox (40.32051pt too wide) in paragraph at lines 1061--1062
-\T1/cmr/bx/n/10.95 arkhal. \T1/cmr/m/n/10.95 Fron-tiers in En-ergy Re-search. [
-]$\T1/cmtt/m/n/10.95 https : / / www . frontiersin . org / journals / energy-[]
-research /
- []
-
-
-Overfull \hbox (63.03441pt too wide) in paragraph at lines 1062--1063
-\T1/cmr/m/n/10.95 ity and So-ci-ety. []$\T1/cmtt/m/n/10.95 https : / / energsus
-tainsoc . biomedcentral . com / articles / 10 . 1186 / s13705-[]018-[]0147-[]2$
-[] 
- []
-
-[22] (build/village_life_needs.aux)
+[42] [43] (build/village_governance_technical_framework_nepal.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `village_life_needs.out' has not changed.
-(rerunfilecheck)             Checksum: C996ABE225D9DF1AF9A28F10BFB2AEF1;20199.
+Package rerunfilecheck Info: File `village_governance_technical_framework_nepal
+.out' has not changed.
+(rerunfilecheck)             Checksum: 17016CB5A454E4B9CBFEB2152F35B8E1;34026.
  ) 
 Here is how much of TeX's memory you used:
- 9199 strings out of 474222
- 142325 string characters out of 5748734
- 1942975 words of memory out of 5000000
- 31224 multiletter control sequences out of 15000+600000
- 569169 words of font info for 59 fonts, out of 8000000 for 9000
+ 9662 strings out of 474222
+ 148926 string characters out of 5748734
+ 1952975 words of memory out of 5000000
+ 31449 multiletter control sequences out of 15000+600000
+ 569947 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,1207b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/cm-super/sfbi1095.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on build/village_life_needs.pdf (22 pages, 283760 bytes).
+ 75i,9n,79p,1233b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfbi1095.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sftt1095.pfb>
+Output written on build/village_governance_technical_framework_nepal.pdf (43 pa
+ges, 381298 bytes).
 PDF statistics:
- 838 PDF objects out of 1000 (max. 8388607)
- 787 compressed objects within 8 object streams
- 151 named destinations out of 1000 (max. 500000)
- 969 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1481 PDF objects out of 1728 (max. 8388607)
+ 1399 compressed objects within 14 object streams
+ 378 named destinations out of 1000 (max. 500000)
+ 1529 words of extra memory for PDF output out of 10000 (max. 10000000)
 
