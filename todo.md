@@ -1,0 +1,3 @@
+- Use top-3 large eGOV projects, and bring all relevant ideas/implementations for our village level Egov.
+- Create a lot of tasks
+- Github branching style: master, several fetures, separate /dev/upg/<dev_branch_name>. Dev branch to featuers PR, and feature to master PR. 
